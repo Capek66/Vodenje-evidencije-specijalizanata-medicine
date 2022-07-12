@@ -1,0 +1,10 @@
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\bin\Debug\Vodenje evidencije specijalizanata medicine.exe.config
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\bin\Debug\Vodenje evidencije specijalizanata medicine.exe
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\bin\Debug\Vodenje evidencije specijalizanata medicine.pdb
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\obj\Debug\Vodenje evidencije specijalizanata medicine.csproj.AssemblyReference.cache
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\obj\Debug\Vodenje evidencije specijalizanata medicine.csproj.SuggestedBindingRedirects.cache
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\obj\Debug\Vodenje_evidencije_specijalizanata_medicine.Properties.Resources.resources
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\obj\Debug\Vodenje evidencije specijalizanata medicine.csproj.GenerateResource.cache
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\obj\Debug\Vodenje evidencije specijalizanata medicine.csproj.CoreCompileInputs.cache
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\obj\Debug\Vodenje evidencije specijalizanata medicine.exe
+D:\Zavrsni\Vodenje-evidencije-specijalizanata-medicine\Vodenje evidencije specijalizanata medicine\Vodenje evidencije specijalizanata medicine\obj\Debug\Vodenje evidencije specijalizanata medicine.pdb
