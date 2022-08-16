@@ -16,7 +16,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }
