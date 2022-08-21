@@ -1,6 +1,6 @@
 ﻿namespace Vodenje_evidencije_specijalizanata_medicine
 {
-    partial class PraćenjeZahvataAdd
+    partial class PracenjeZahvataAdd
     {
         /// <summary>
         /// Required designer variable.

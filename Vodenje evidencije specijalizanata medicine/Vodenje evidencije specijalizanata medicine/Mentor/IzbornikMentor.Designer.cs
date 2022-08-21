@@ -1,6 +1,6 @@
-﻿namespace Vodenje_evidencije_specijalizanata_medicine
+﻿namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
-    partial class Pocetna
+    partial class IzbornikMentor
     {
         /// <summary>
         /// Required designer variable.
@@ -32,9 +32,11 @@
             this.RasporedObavljanjaLbl = new System.Windows.Forms.ToolStripLabel();
             this.PracenjeNapredovanjaLbl = new System.Windows.Forms.ToolStripLabel();
             this.PracenjeObavljenihZahvataLbl = new System.Windows.Forms.ToolStripLabel();
-            this.SpecijalistickaUsavrsavanjaLbl = new System.Windows.Forms.ToolStripLabel();
-            this.LogOutLbl = new System.Windows.Forms.ToolStripLabel();
+            this.SpecijalizantiLbl = new System.Windows.Forms.ToolStripLabel();
+            this.Profil = new System.Windows.Forms.ToolStripLabel();
+            this.Pocetna = new System.Windows.Forms.ToolStripLabel();
             this.knjizica = new System.Windows.Forms.Panel();
+            this.cbSpecijalizanti = new System.Windows.Forms.ToolStripComboBox();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,12 +46,14 @@
             this.RasporedObavljanjaLbl,
             this.PracenjeNapredovanjaLbl,
             this.PracenjeObavljenihZahvataLbl,
-            this.SpecijalistickaUsavrsavanjaLbl,
-            this.LogOutLbl});
+            this.SpecijalizantiLbl,
+            this.Profil,
+            this.Pocetna,
+            this.cbSpecijalizanti});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(1322, 25);
-            this.Menu.TabIndex = 0;
+            this.Menu.TabIndex = 2;
             this.Menu.Text = "toolStrip1";
             // 
             // RasporedObavljanjaLbl
@@ -57,14 +61,12 @@
             this.RasporedObavljanjaLbl.Name = "RasporedObavljanjaLbl";
             this.RasporedObavljanjaLbl.Size = new System.Drawing.Size(242, 22);
             this.RasporedObavljanjaLbl.Text = "Raspored obavljanja programa specijalizacije";
-            this.RasporedObavljanjaLbl.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // PracenjeNapredovanjaLbl
             // 
             this.PracenjeNapredovanjaLbl.Name = "PracenjeNapredovanjaLbl";
             this.PracenjeNapredovanjaLbl.Size = new System.Drawing.Size(127, 22);
             this.PracenjeNapredovanjaLbl.Text = "Praćenje napredovanja";
-            this.PracenjeNapredovanjaLbl.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // PracenjeObavljenihZahvataLbl
             // 
@@ -72,34 +74,46 @@
             this.PracenjeObavljenihZahvataLbl.Size = new System.Drawing.Size(153, 22);
             this.PracenjeObavljenihZahvataLbl.Text = "Praćenje obavljenih zahvata";
             // 
-            // SpecijalistickaUsavrsavanjaLbl
+            // SpecijalizantiLbl
             // 
-            this.SpecijalistickaUsavrsavanjaLbl.Name = "SpecijalistickaUsavrsavanjaLbl";
-            this.SpecijalistickaUsavrsavanjaLbl.Size = new System.Drawing.Size(150, 22);
-            this.SpecijalistickaUsavrsavanjaLbl.Text = "Specijalistička usavršavanja";
+            this.SpecijalizantiLbl.Name = "SpecijalizantiLbl";
+            this.SpecijalizantiLbl.Size = new System.Drawing.Size(75, 22);
+            this.SpecijalizantiLbl.Text = "Specijalizanti";
             // 
-            // LogOutLbl
+            // Profil
             // 
-            this.LogOutLbl.Name = "LogOutLbl";
-            this.LogOutLbl.Size = new System.Drawing.Size(55, 22);
-            this.LogOutLbl.Text = "Odjavi se";
+            this.Profil.Name = "Profil";
+            this.Profil.Size = new System.Drawing.Size(35, 22);
+            this.Profil.Text = "Profil";
+            // 
+            // Pocetna
+            // 
+            this.Pocetna.Name = "Pocetna";
+            this.Pocetna.Size = new System.Drawing.Size(50, 22);
+            this.Pocetna.Text = "Početna";
             // 
             // knjizica
             // 
             this.knjizica.Location = new System.Drawing.Point(0, 28);
             this.knjizica.Name = "knjizica";
             this.knjizica.Size = new System.Drawing.Size(1322, 621);
-            this.knjizica.TabIndex = 1;
+            this.knjizica.TabIndex = 3;
             // 
-            // Pocetna
+            // cbSpecijalizanti
+            // 
+            this.cbSpecijalizanti.Name = "cbSpecijalizanti";
+            this.cbSpecijalizanti.Size = new System.Drawing.Size(160, 25);
+            this.cbSpecijalizanti.Text = "Izaberite specijalizanta";
+            // 
+            // IzbornikMentor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 648);
-            this.Controls.Add(this.knjizica);
             this.Controls.Add(this.Menu);
-            this.Name = "Pocetna";
-            this.Text = "Evidencija specijalizanata";
+            this.Controls.Add(this.knjizica);
+            this.Name = "IzbornikMentor";
+            this.Text = "IzbornikMentor";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.ResumeLayout(false);
@@ -113,8 +127,10 @@
         private System.Windows.Forms.ToolStripLabel RasporedObavljanjaLbl;
         private System.Windows.Forms.ToolStripLabel PracenjeNapredovanjaLbl;
         private System.Windows.Forms.ToolStripLabel PracenjeObavljenihZahvataLbl;
-        private System.Windows.Forms.ToolStripLabel SpecijalistickaUsavrsavanjaLbl;
-        private System.Windows.Forms.ToolStripLabel LogOutLbl;
+        private System.Windows.Forms.ToolStripLabel SpecijalizantiLbl;
+        private System.Windows.Forms.ToolStripLabel Profil;
+        private System.Windows.Forms.ToolStripLabel Pocetna;
+        private System.Windows.Forms.ToolStripComboBox cbSpecijalizanti;
         private System.Windows.Forms.Panel knjizica;
     }
 }

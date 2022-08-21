@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
-    public partial class Login : Form
+    public partial class PracenjeNapredovanja : UserControl
     {
-        private SpecOdabir pocetnaSpec;
-        public Login()
+        public PracenjeNapredovanja()
         {
             InitializeComponent();
-            pocetnaSpec = new SpecOdabir();
-        }
-
-        private void btnLogIn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            pocetnaSpec.ShowDialog();
-            this.Show();
         }
     }
 }

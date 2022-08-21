@@ -52,58 +52,148 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pocetna.cs">
+    <Compile Include="Mentor\IzbornikMentor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pocetna.Designer.cs">
-      <DependentUpon>Pocetna.cs</DependentUpon>
+    <Compile Include="Mentor\IzbornikMentor.Designer.cs">
+      <DependentUpon>IzbornikMentor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PracenjeNapredovanjaAdd.cs">
+    <Compile Include="Mentor\PocetnaMentori.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PracenjeNapredovanjaAdd.Designer.cs">
-      <DependentUpon>PracenjeNapredovanjaAdd.cs</DependentUpon>
+    <Compile Include="Mentor\PocetnaMentori.Designer.cs">
+      <DependentUpon>PocetnaMentori.cs</DependentUpon>
     </Compile>
-    <Compile Include="PraćenjeNapredovanja.cs">
+    <Compile Include="Mentor\RasporedObavljanjaMentor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PraćenjeNapredovanja.Designer.cs">
-      <DependentUpon>PraćenjeNapredovanja.cs</DependentUpon>
+    <Compile Include="Mentor\RasporedObavljanjaMentor.Designer.cs">
+      <DependentUpon>RasporedObavljanjaMentor.cs</DependentUpon>
     </Compile>
-    <Compile Include="PraćenjeZahvataAdd.cs">
+    <Compile Include="Mentor\RasporedObMntDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PraćenjeZahvataAdd.Designer.cs">
-      <DependentUpon>PraćenjeZahvataAdd.cs</DependentUpon>
+    <Compile Include="Mentor\RasporedObMntDetails.Designer.cs">
+      <DependentUpon>RasporedObMntDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\KnjizicaPocetnaSpec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\KnjizicaPocetnaSpec.Designer.cs">
+      <DependentUpon>KnjizicaPocetnaSpec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordUpdate.Designer.cs">
+      <DependentUpon>PasswordUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\PracenjeNapredovanjaAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\PracenjeNapredovanjaAdd.Designer.cs">
+      <DependentUpon>PracenjeNapredovanjaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\PracenjeZahvata.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\PracenjeZahvata.Designer.cs">
+      <DependentUpon>PracenjeZahvata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\PracenjeNapredovanja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\PracenjeNapredovanja.Designer.cs">
+      <DependentUpon>PracenjeNapredovanja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\PracenjeZahvataAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\PracenjeZahvataAdd.Designer.cs">
+      <DependentUpon>PracenjeZahvataAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\Profil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\Profil.Designer.cs">
+      <DependentUpon>Profil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\ProfilUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\ProfilUpdate.Designer.cs">
+      <DependentUpon>ProfilUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RasporedObavljanja.cs">
+    <Compile Include="Specijalizant\RasporedObavljanja.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="RasporedObavljanja.Designer.cs">
+    <Compile Include="Specijalizant\RasporedObavljanja.Designer.cs">
       <DependentUpon>RasporedObavljanja.cs</DependentUpon>
     </Compile>
-    <Compile Include="RasporedObavljanjaAdd.cs">
+    <Compile Include="Specijalizant\RasporedObavljanjaAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RasporedObavljanjaAdd.Designer.cs">
+    <Compile Include="Specijalizant\RasporedObavljanjaAdd.Designer.cs">
       <DependentUpon>RasporedObavljanjaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\SpecijalizacijaAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\SpecijalizacijaAdd.Designer.cs">
+      <DependentUpon>SpecijalizacijaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\SpecOdabir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\SpecOdabir.Designer.cs">
+      <DependentUpon>SpecOdabir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\SpecUsavrsavanja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\SpecUsavrsavanja.Designer.cs">
+      <DependentUpon>SpecUsavrsavanja.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pocetna.resx">
-      <DependentUpon>Pocetna.cs</DependentUpon>
+    <EmbeddedResource Include="Mentor\IzbornikMentor.resx">
+      <DependentUpon>IzbornikMentor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PracenjeNapredovanjaAdd.resx">
+    <EmbeddedResource Include="Mentor\PocetnaMentori.resx">
+      <DependentUpon>PocetnaMentori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\RasporedObavljanjaMentor.resx">
+      <DependentUpon>RasporedObavljanjaMentor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\RasporedObMntDetails.resx">
+      <DependentUpon>RasporedObMntDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\KnjizicaPocetnaSpec.resx">
+      <DependentUpon>KnjizicaPocetnaSpec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordUpdate.resx">
+      <DependentUpon>PasswordUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\PracenjeNapredovanjaAdd.resx">
       <DependentUpon>PracenjeNapredovanjaAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PraćenjeNapredovanja.resx">
-      <DependentUpon>PraćenjeNapredovanja.cs</DependentUpon>
+    <EmbeddedResource Include="Specijalizant\PracenjeZahvata.resx">
+      <DependentUpon>PracenjeZahvata.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PraćenjeZahvataAdd.resx">
-      <DependentUpon>PraćenjeZahvataAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Specijalizant\PracenjeNapredovanja.resx">
+      <DependentUpon>PracenjeNapredovanja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\PracenjeZahvataAdd.resx">
+      <DependentUpon>PracenjeZahvataAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\Profil.resx">
+      <DependentUpon>Profil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\ProfilUpdate.resx">
+      <DependentUpon>ProfilUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,11 +204,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RasporedObavljanja.resx">
+    <EmbeddedResource Include="Specijalizant\RasporedObavljanja.resx">
       <DependentUpon>RasporedObavljanja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RasporedObavljanjaAdd.resx">
+    <EmbeddedResource Include="Specijalizant\RasporedObavljanjaAdd.resx">
       <DependentUpon>RasporedObavljanjaAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\SpecijalizacijaAdd.resx">
+      <DependentUpon>SpecijalizacijaAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\SpecOdabir.resx">
+      <DependentUpon>SpecOdabir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\SpecUsavrsavanja.resx">
+      <DependentUpon>SpecUsavrsavanja.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -133,5 +232,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

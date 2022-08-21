@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Vodenje_evidencije_specijalizanata_medicine
+namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
-    public partial class PraćenjeZahvataAdd : Form
+    public partial class IzbornikMentor : Form
     {
-        public PraćenjeZahvataAdd()
+        public IzbornikMentor()
         {
             InitializeComponent();
         }

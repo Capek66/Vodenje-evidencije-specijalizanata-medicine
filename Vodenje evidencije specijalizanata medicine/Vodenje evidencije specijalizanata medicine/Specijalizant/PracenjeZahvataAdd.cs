@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
-    public partial class PraćenjeNapredovanja : UserControl
+    public partial class PracenjeZahvataAdd : Form
     {
-        public PraćenjeNapredovanja()
+        public PracenjeZahvataAdd()
         {
             InitializeComponent();
         }
