@@ -35,8 +35,9 @@
             this.SpecijalizantiLbl = new System.Windows.Forms.ToolStripLabel();
             this.Profil = new System.Windows.Forms.ToolStripLabel();
             this.Pocetna = new System.Windows.Forms.ToolStripLabel();
-            this.knjizica = new System.Windows.Forms.Panel();
             this.cbSpecijalizanti = new System.Windows.Forms.ToolStripComboBox();
+            this.knjizica = new System.Windows.Forms.Panel();
+            this.tslReset = new System.Windows.Forms.ToolStripLabel();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             this.SpecijalizantiLbl,
             this.Profil,
             this.Pocetna,
-            this.cbSpecijalizanti});
+            this.cbSpecijalizanti,
+            this.tslReset});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(1322, 25);
@@ -61,36 +63,48 @@
             this.RasporedObavljanjaLbl.Name = "RasporedObavljanjaLbl";
             this.RasporedObavljanjaLbl.Size = new System.Drawing.Size(242, 22);
             this.RasporedObavljanjaLbl.Text = "Raspored obavljanja programa specijalizacije";
+            this.RasporedObavljanjaLbl.Click += new System.EventHandler(this.RasporedObavljanjaLbl_Click);
             // 
             // PracenjeNapredovanjaLbl
             // 
             this.PracenjeNapredovanjaLbl.Name = "PracenjeNapredovanjaLbl";
             this.PracenjeNapredovanjaLbl.Size = new System.Drawing.Size(127, 22);
             this.PracenjeNapredovanjaLbl.Text = "Praćenje napredovanja";
+            this.PracenjeNapredovanjaLbl.Click += new System.EventHandler(this.PracenjeNapredovanjaLbl_Click);
             // 
             // PracenjeObavljenihZahvataLbl
             // 
             this.PracenjeObavljenihZahvataLbl.Name = "PracenjeObavljenihZahvataLbl";
             this.PracenjeObavljenihZahvataLbl.Size = new System.Drawing.Size(153, 22);
             this.PracenjeObavljenihZahvataLbl.Text = "Praćenje obavljenih zahvata";
+            this.PracenjeObavljenihZahvataLbl.Click += new System.EventHandler(this.PracenjeObavljenihZahvataLbl_Click);
             // 
             // SpecijalizantiLbl
             // 
             this.SpecijalizantiLbl.Name = "SpecijalizantiLbl";
             this.SpecijalizantiLbl.Size = new System.Drawing.Size(75, 22);
             this.SpecijalizantiLbl.Text = "Specijalizanti";
+            this.SpecijalizantiLbl.Click += new System.EventHandler(this.SpecijalizantiLbl_Click);
             // 
             // Profil
             // 
             this.Profil.Name = "Profil";
             this.Profil.Size = new System.Drawing.Size(35, 22);
             this.Profil.Text = "Profil";
+            this.Profil.Click += new System.EventHandler(this.Profil_Click);
             // 
             // Pocetna
             // 
             this.Pocetna.Name = "Pocetna";
             this.Pocetna.Size = new System.Drawing.Size(50, 22);
             this.Pocetna.Text = "Početna";
+            this.Pocetna.Click += new System.EventHandler(this.Pocetna_Click);
+            // 
+            // cbSpecijalizanti
+            // 
+            this.cbSpecijalizanti.Name = "cbSpecijalizanti";
+            this.cbSpecijalizanti.Size = new System.Drawing.Size(160, 25);
+            this.cbSpecijalizanti.Text = "Izaberite specijalizanta";
             // 
             // knjizica
             // 
@@ -99,11 +113,12 @@
             this.knjizica.Size = new System.Drawing.Size(1322, 621);
             this.knjizica.TabIndex = 3;
             // 
-            // cbSpecijalizanti
+            // tslReset
             // 
-            this.cbSpecijalizanti.Name = "cbSpecijalizanti";
-            this.cbSpecijalizanti.Size = new System.Drawing.Size(160, 25);
-            this.cbSpecijalizanti.Text = "Izaberite specijalizanta";
+            this.tslReset.Name = "tslReset";
+            this.tslReset.Size = new System.Drawing.Size(62, 22);
+            this.tslReset.Text = "Reset filter";
+            this.tslReset.Click += new System.EventHandler(this.tslReset_Click);
             // 
             // IzbornikMentor
             // 
@@ -113,7 +128,7 @@
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.knjizica);
             this.Name = "IzbornikMentor";
-            this.Text = "IzbornikMentor";
+            this.Text = "Evidencija specijalizanata";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.ResumeLayout(false);
@@ -132,5 +147,6 @@
         private System.Windows.Forms.ToolStripLabel Pocetna;
         private System.Windows.Forms.ToolStripComboBox cbSpecijalizanti;
         private System.Windows.Forms.Panel knjizica;
+        private System.Windows.Forms.ToolStripLabel tslReset;
     }
 }

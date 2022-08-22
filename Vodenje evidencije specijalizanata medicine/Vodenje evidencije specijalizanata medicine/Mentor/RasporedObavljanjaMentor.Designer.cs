@@ -54,6 +54,7 @@
             this.btnDetalji.TabIndex = 14;
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.UseVisualStyleBackColor = true;
+            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
             // dgvRaspored
             // 

@@ -16,5 +16,10 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

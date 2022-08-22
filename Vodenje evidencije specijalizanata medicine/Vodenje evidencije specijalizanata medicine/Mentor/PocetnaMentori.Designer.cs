@@ -42,6 +42,7 @@
             this.btnOdjava.TabIndex = 9;
             this.btnOdjava.Text = "Odjavi se";
             this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // btnDnevnik
             // 
@@ -61,6 +62,7 @@
             this.btnKnjizica.TabIndex = 5;
             this.btnKnjizica.Text = "Knjižica";
             this.btnKnjizica.UseVisualStyleBackColor = true;
+            this.btnKnjizica.Click += new System.EventHandler(this.btnKnjizica_Click);
             // 
             // label1
             // 

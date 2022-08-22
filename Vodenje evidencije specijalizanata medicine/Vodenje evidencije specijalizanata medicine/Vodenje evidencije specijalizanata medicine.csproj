@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administator\DodajKorisnika.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administator\DodajKorisnika.Designer.cs">
+      <DependentUpon>DodajKorisnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administator\IzbornikAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administator\IzbornikAdm.Designer.cs">
+      <DependentUpon>IzbornikAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administator\TrenutniKor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Administator\TrenutniKor.Designer.cs">
+      <DependentUpon>TrenutniKor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +82,42 @@
     <Compile Include="Mentor\PocetnaMentori.Designer.cs">
       <DependentUpon>PocetnaMentori.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mentor\PopisZapisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mentor\PopisZapisa.Designer.cs">
+      <DependentUpon>PopisZapisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor\PracenjeNapMntr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mentor\PracenjeNapMntr.Designer.cs">
+      <DependentUpon>PracenjeNapMntr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor\PracenjeNapMntrDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mentor\PracenjeNapMntrDetalji.Designer.cs">
+      <DependentUpon>PracenjeNapMntrDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor\PracenjeZahvataMntr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mentor\PracenjeZahvataMntr.Designer.cs">
+      <DependentUpon>PracenjeZahvataMntr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor\PracenjeZahvataMntrDetalji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mentor\PracenjeZahvataMntrDetalji.Designer.cs">
+      <DependentUpon>PracenjeZahvataMntrDetalji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor\PregledSpec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mentor\PregledSpec.Designer.cs">
+      <DependentUpon>PregledSpec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mentor\RasporedObavljanjaMentor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +129,18 @@
     </Compile>
     <Compile Include="Mentor\RasporedObMntDetails.Designer.cs">
       <DependentUpon>RasporedObMntDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor\SpecijalizantiMntr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mentor\SpecijalizantiMntr.Designer.cs">
+      <DependentUpon>SpecijalizantiMntr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mentor\StupanjNapredovanja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mentor\StupanjNapredovanja.Designer.cs">
+      <DependentUpon>StupanjNapredovanja.cs</DependentUpon>
     </Compile>
     <Compile Include="Specijalizant\KnjizicaPocetnaSpec.cs">
       <SubType>Form</SubType>
@@ -156,6 +222,15 @@
     <Compile Include="Specijalizant\SpecUsavrsavanja.Designer.cs">
       <DependentUpon>SpecUsavrsavanja.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Administator\DodajKorisnika.resx">
+      <DependentUpon>DodajKorisnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administator\IzbornikAdm.resx">
+      <DependentUpon>IzbornikAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administator\TrenutniKor.resx">
+      <DependentUpon>TrenutniKor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,11 +240,35 @@
     <EmbeddedResource Include="Mentor\PocetnaMentori.resx">
       <DependentUpon>PocetnaMentori.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\PopisZapisa.resx">
+      <DependentUpon>PopisZapisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\PracenjeNapMntr.resx">
+      <DependentUpon>PracenjeNapMntr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\PracenjeNapMntrDetalji.resx">
+      <DependentUpon>PracenjeNapMntrDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\PracenjeZahvataMntr.resx">
+      <DependentUpon>PracenjeZahvataMntr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\PracenjeZahvataMntrDetalji.resx">
+      <DependentUpon>PracenjeZahvataMntrDetalji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\PregledSpec.resx">
+      <DependentUpon>PregledSpec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mentor\RasporedObavljanjaMentor.resx">
       <DependentUpon>RasporedObavljanjaMentor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mentor\RasporedObMntDetails.resx">
       <DependentUpon>RasporedObMntDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\SpecijalizantiMntr.resx">
+      <DependentUpon>SpecijalizantiMntr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mentor\StupanjNapredovanja.resx">
+      <DependentUpon>StupanjNapredovanja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Specijalizant\KnjizicaPocetnaSpec.resx">
       <DependentUpon>KnjizicaPocetnaSpec.cs</DependentUpon>

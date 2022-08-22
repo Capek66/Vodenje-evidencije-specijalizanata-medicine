@@ -12,9 +12,16 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
     public partial class RasporedObavljanjaMentor : UserControl
     {
+        private RasporedObMntDetails rasporedOb;
         public RasporedObavljanjaMentor()
         {
             InitializeComponent();
+        }
+
+        private void btnDetalji_Click(object sender, EventArgs e)
+        {
+            rasporedOb = new RasporedObMntDetails();
+            rasporedOb.ShowDialog();
         }
     }
 }
