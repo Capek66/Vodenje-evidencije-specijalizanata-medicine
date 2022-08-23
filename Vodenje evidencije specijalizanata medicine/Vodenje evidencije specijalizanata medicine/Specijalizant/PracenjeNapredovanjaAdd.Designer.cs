@@ -34,31 +34,35 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbMentor = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(275, 175);
+            this.btnDodaj.Location = new System.Drawing.Point(282, 209);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnDodaj.TabIndex = 29;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(361, 175);
+            this.btnOdustani.Location = new System.Drawing.Point(368, 209);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 28;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // tbKompetencije
             // 
             this.tbKompetencije.Location = new System.Drawing.Point(25, 139);
             this.tbKompetencije.Name = "tbKompetencije";
-            this.tbKompetencije.Size = new System.Drawing.Size(161, 20);
+            this.tbKompetencije.Size = new System.Drawing.Size(191, 20);
             this.tbKompetencije.TabIndex = 27;
             // 
             // label2
@@ -89,11 +93,30 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Praćenje napredovanja u stjecanju općih i posebnih kompetencija";
             // 
+            // cbMentor
+            // 
+            this.cbMentor.FormattingEnabled = true;
+            this.cbMentor.Location = new System.Drawing.Point(25, 184);
+            this.cbMentor.Name = "cbMentor";
+            this.cbMentor.Size = new System.Drawing.Size(191, 21);
+            this.cbMentor.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 168);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Mentor";
+            // 
             // PracenjeNapredovanjaAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 216);
+            this.ClientSize = new System.Drawing.Size(455, 244);
+            this.Controls.Add(this.cbMentor);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.tbKompetencije);
@@ -115,5 +138,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbMentor;
+        private System.Windows.Forms.Label label10;
     }
 }

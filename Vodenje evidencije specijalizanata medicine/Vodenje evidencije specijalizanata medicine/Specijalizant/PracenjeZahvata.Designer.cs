@@ -30,37 +30,39 @@
         {
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnDetalji = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvZahvati = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZahvati)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(598, 329);
+            this.btnAddNew.Location = new System.Drawing.Point(715, 329);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(104, 23);
             this.btnAddNew.TabIndex = 20;
             this.btnAddNew.Text = "Novi zapis";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnDetalji
             // 
-            this.btnDetalji.Location = new System.Drawing.Point(708, 329);
+            this.btnDetalji.Location = new System.Drawing.Point(825, 329);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(75, 23);
             this.btnDetalji.TabIndex = 19;
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.UseVisualStyleBackColor = true;
+            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
-            // dataGridView1
+            // dgvZahvati
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 268);
-            this.dataGridView1.TabIndex = 18;
+            this.dgvZahvati.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvZahvati.Location = new System.Drawing.Point(7, 55);
+            this.dgvZahvati.Name = "dgvZahvati";
+            this.dgvZahvati.Size = new System.Drawing.Size(893, 268);
+            this.dgvZahvati.TabIndex = 18;
             // 
             // label1
             // 
@@ -87,12 +89,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnDetalji);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvZahvati);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "PracenjeZahvata";
-            this.Size = new System.Drawing.Size(824, 391);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(916, 370);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvZahvati)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,7 +104,7 @@
 
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnDetalji;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvZahvati;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
     }

@@ -31,9 +31,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnDetalji = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvKompetencije = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKompetencije)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -54,6 +54,7 @@
             this.btnAddNew.TabIndex = 15;
             this.btnAddNew.Text = "Novi zapis";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnDetalji
             // 
@@ -63,14 +64,15 @@
             this.btnDetalji.TabIndex = 14;
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.UseVisualStyleBackColor = true;
+            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
-            // dataGridView1
+            // dgvKompetencije
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 268);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvKompetencije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKompetencije.Location = new System.Drawing.Point(7, 55);
+            this.dgvKompetencije.Name = "dgvKompetencije";
+            this.dgvKompetencije.Size = new System.Drawing.Size(776, 268);
+            this.dgvKompetencije.TabIndex = 13;
             // 
             // label1
             // 
@@ -87,12 +89,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnDetalji);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvKompetencije);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "PracenjeNapredovanja";
             this.Size = new System.Drawing.Size(828, 392);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKompetencije)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,7 +105,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnDetalji;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvKompetencije;
         private System.Windows.Forms.Label label1;
     }
 }

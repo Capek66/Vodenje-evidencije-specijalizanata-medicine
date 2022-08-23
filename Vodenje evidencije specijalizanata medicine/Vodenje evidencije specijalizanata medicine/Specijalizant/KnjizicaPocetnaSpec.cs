@@ -31,12 +31,14 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(rasporedObavljanja);
+            rasporedObavljanja.UcitajZapise();
         }
 
         private void PracenjeNapredovanjaLbl_Click(object sender, EventArgs e)
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(pracenjeNapredovanja);
+            pracenjeNapredovanja.UcitajKompetencije();
         }
 
         private void Profil_Click(object sender, EventArgs e)
@@ -55,6 +57,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(pracenjeZahvata);
+            pracenjeZahvata.UcitajZahvate();
         }
 
         private void SpecijalistickaUsavrsavanjaLbl_Click(object sender, EventArgs e)

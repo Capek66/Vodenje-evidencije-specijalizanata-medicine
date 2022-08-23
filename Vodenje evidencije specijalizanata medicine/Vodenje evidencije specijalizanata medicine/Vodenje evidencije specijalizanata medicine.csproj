@@ -193,6 +193,18 @@
     <Compile Include="Specijalizant\PracenjeZahvataAdd.Designer.cs">
       <DependentUpon>PracenjeZahvataAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Specijalizant\PracNapDet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\PracNapDet.Designer.cs">
+      <DependentUpon>PracNapDet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\PracZahDet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\PracZahDet.Designer.cs">
+      <DependentUpon>PracZahDet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Specijalizant\Profil.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -207,6 +219,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specijalizant\RaspObjDet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\RaspObjDet.Designer.cs">
+      <DependentUpon>RaspObjDet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Specijalizant\RasporedObavljanja.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,6 +242,12 @@
     </Compile>
     <Compile Include="Specijalizant\SpecijalizacijaAdd.Designer.cs">
       <DependentUpon>SpecijalizacijaAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specijalizant\SpecDet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specijalizant\SpecDet.Designer.cs">
+      <DependentUpon>SpecDet.cs</DependentUpon>
     </Compile>
     <Compile Include="Specijalizant\SpecijalizacijePrikaz.cs" />
     <Compile Include="Specijalizant\SpecOdabir.cs">
@@ -304,6 +328,12 @@
     <EmbeddedResource Include="Specijalizant\PracenjeZahvataAdd.resx">
       <DependentUpon>PracenjeZahvataAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\PracNapDet.resx">
+      <DependentUpon>PracNapDet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\PracZahDet.resx">
+      <DependentUpon>PracZahDet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Specijalizant\Profil.resx">
       <DependentUpon>Profil.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +349,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Specijalizant\RaspObjDet.resx">
+      <DependentUpon>RaspObjDet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Specijalizant\RasporedObavljanja.resx">
       <DependentUpon>RasporedObavljanja.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Specijalizant\SpecijalizacijaAdd.resx">
       <DependentUpon>SpecijalizacijaAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specijalizant\SpecDet.resx">
+      <DependentUpon>SpecDet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Specijalizant\SpecOdabir.resx">
       <DependentUpon>SpecOdabir.cs</DependentUpon>

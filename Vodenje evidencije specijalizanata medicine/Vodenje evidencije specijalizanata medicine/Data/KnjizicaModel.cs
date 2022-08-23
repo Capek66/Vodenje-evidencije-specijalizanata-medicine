@@ -36,11 +36,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Data
                 .Property(e => e.potpis_gl_mentor)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Kompetencije>()
-                .HasMany(e => e.Specijalizacija)
-                .WithMany(e => e.Kompetencije)
-                .Map(m => m.ToTable("Kompetencije_Spec").MapLeftKey("id_kompetencije").MapRightKey("id_specijalizacija"));
-
             modelBuilder.Entity<Korisnik>()
                 .Property(e => e.ime)
                 .IsUnicode(false);
@@ -122,11 +117,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Data
                 .Property(e => e.potpis_gl_mentor)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<RasporedPrograma>()
-                .HasMany(e => e.Specijalizacija)
-                .WithMany(e => e.RasporedPrograma)
-                .Map(m => m.ToTable("Raspored_Spec").MapLeftKey("id_raspored").MapRightKey("id_specijalizacija"));
-
             modelBuilder.Entity<Specijalizacija>()
                 .Property(e => e.specijalizacija1)
                 .IsUnicode(false);
@@ -148,15 +138,28 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Data
                 .IsUnicode(false);
 
             modelBuilder.Entity<Specijalizacija>()
-                .HasMany(e => e.ZavrsetakSpecijalizacije)
+                .HasMany(e => e.Kompetencije)
+                .WithRequired(e => e.Specijalizacija1)
+                .HasForeignKey(e => e.specijalizacija)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Specijalizacija>()
+                .HasMany(e => e.RasporedPrograma)
                 .WithRequired(e => e.Specijalizacija1)
                 .HasForeignKey(e => e.specijalizacija)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Specijalizacija>()
                 .HasMany(e => e.Zahvati)
-                .WithMany(e => e.Specijalizacija)
-                .Map(m => m.ToTable("Zahvat_Spec").MapLeftKey("id_specijalizacija").MapRightKey("id_zahvat"));
+                .WithRequired(e => e.Specijalizacija1)
+                .HasForeignKey(e => e.specijalizacija)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Specijalizacija>()
+                .HasMany(e => e.ZavrsetakSpecijalizacije)
+                .WithRequired(e => e.Specijalizacija1)
+                .HasForeignKey(e => e.specijalizacija)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Uloga>()
                 .Property(e => e.uloga1)

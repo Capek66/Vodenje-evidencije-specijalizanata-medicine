@@ -34,27 +34,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbBroj = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbMentor = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(165, 160);
+            this.btnDodaj.Location = new System.Drawing.Point(169, 201);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(75, 23);
             this.btnDodaj.TabIndex = 35;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(247, 160);
+            this.btnOdustani.Location = new System.Drawing.Point(251, 201);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(75, 23);
             this.btnOdustani.TabIndex = 34;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // tbZahvat
             // 
@@ -91,12 +95,12 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Naziv dijela programa specijalizacije";
             // 
-            // textBox1
+            // tbBroj
             // 
-            this.textBox1.Location = new System.Drawing.Point(196, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(63, 20);
-            this.textBox1.TabIndex = 37;
+            this.tbBroj.Location = new System.Drawing.Point(196, 111);
+            this.tbBroj.Name = "tbBroj";
+            this.tbBroj.Size = new System.Drawing.Size(63, 20);
+            this.tbBroj.TabIndex = 37;
             // 
             // label3
             // 
@@ -107,12 +111,31 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Broj zahvata";
             // 
-            // PraćenjeZahvataAdd
+            // cbMentor
+            // 
+            this.cbMentor.FormattingEnabled = true;
+            this.cbMentor.Location = new System.Drawing.Point(16, 156);
+            this.cbMentor.Name = "cbMentor";
+            this.cbMentor.Size = new System.Drawing.Size(161, 21);
+            this.cbMentor.TabIndex = 39;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.TabIndex = 38;
+            this.label10.Text = "Mentor";
+            // 
+            // PracenjeZahvataAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 195);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(338, 236);
+            this.Controls.Add(this.cbMentor);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.tbBroj);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnOdustani);
@@ -120,7 +143,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
-            this.Name = "PraćenjeZahvataAdd";
+            this.Name = "PracenjeZahvataAdd";
             this.Text = "Praćenje obavljenih zahvata";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,7 +158,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbBroj;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbMentor;
+        private System.Windows.Forms.Label label10;
     }
 }

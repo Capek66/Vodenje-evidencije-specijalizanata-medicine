@@ -15,6 +15,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
     {
         private SpecijalizacijaAdd specijalizacijaAdd;
         private KnjizicaModel model;
+        private Specijalizant.SpecDet specijalizacijaDetalji;
         public SpecUsavrsavanja()
         {
             InitializeComponent();
@@ -53,7 +54,9 @@ namespace Vodenje_evidencije_specijalizanata_medicine
 
         private void btnDetalji_Click(object sender, EventArgs e)
         {
-
+            Specijalizant.SpecijalizacijePrikaz odabranaSpec = dgvSpecijalizacije.CurrentRow.DataBoundItem as Specijalizant.SpecijalizacijePrikaz;
+            specijalizacijaDetalji = new Specijalizant.SpecDet(odabranaSpec);
+            specijalizacijaDetalji.ShowDialog();
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)

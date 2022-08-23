@@ -9,12 +9,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Data
     [Table("Zahvati")]
     public partial class Zahvati
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Zahvati()
-        {
-            Specijalizacija = new HashSet<Specijalizacija>();
-        }
-
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
@@ -40,9 +34,10 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Data
         [StringLength(1000)]
         public string potpis_gl_mentor { get; set; }
 
+        public int specijalizacija { get; set; }
+
         public virtual Korisnik Korisnik { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Specijalizacija> Specijalizacija { get; set; }
+        public virtual Specijalizacija Specijalizacija1 { get; set; }
     }
 }

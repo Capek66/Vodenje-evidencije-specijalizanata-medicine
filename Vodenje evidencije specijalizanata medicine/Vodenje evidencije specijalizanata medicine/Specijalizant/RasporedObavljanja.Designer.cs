@@ -60,26 +60,28 @@
             this.dgvRaspored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRaspored.Location = new System.Drawing.Point(7, 57);
             this.dgvRaspored.Name = "dgvRaspored";
-            this.dgvRaspored.Size = new System.Drawing.Size(776, 268);
+            this.dgvRaspored.Size = new System.Drawing.Size(1082, 268);
             this.dgvRaspored.TabIndex = 8;
             // 
             // btnDetalji
             // 
-            this.btnDetalji.Location = new System.Drawing.Point(708, 331);
+            this.btnDetalji.Location = new System.Drawing.Point(1014, 331);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(75, 23);
             this.btnDetalji.TabIndex = 9;
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.UseVisualStyleBackColor = true;
+            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(598, 331);
+            this.btnAddNew.Location = new System.Drawing.Point(904, 331);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(104, 23);
             this.btnAddNew.TabIndex = 10;
             this.btnAddNew.Text = "Novi zapis";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // RasporedObavljanja
             // 
@@ -91,7 +93,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "RasporedObavljanja";
-            this.Size = new System.Drawing.Size(835, 390);
+            this.Size = new System.Drawing.Size(1092, 371);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRaspored)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
