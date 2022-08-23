@@ -28,24 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnObrisi = new System.Windows.Forms.Button();
             this.dgvSpecijalizanti = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMentori = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpecijalizanti)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMentori)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnObrisi
-            // 
-            this.btnObrisi.Location = new System.Drawing.Point(661, 553);
-            this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(123, 51);
-            this.btnObrisi.TabIndex = 27;
-            this.btnObrisi.Text = "Obriši korisnika";
-            this.btnObrisi.UseVisualStyleBackColor = true;
             // 
             // dgvSpecijalizanti
             // 
@@ -75,13 +65,13 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Specijalizanti";
             // 
-            // dataGridView1
+            // dgvMentori
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 325);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 222);
-            this.dataGridView1.TabIndex = 29;
+            this.dgvMentori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMentori.Location = new System.Drawing.Point(8, 325);
+            this.dgvMentori.Name = "dgvMentori";
+            this.dgvMentori.Size = new System.Drawing.Size(776, 222);
+            this.dgvMentori.TabIndex = 29;
             // 
             // label2
             // 
@@ -97,28 +87,25 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMentori);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.dgvSpecijalizanti);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "TrenutniKor";
-            this.Size = new System.Drawing.Size(810, 619);
+            this.Size = new System.Drawing.Size(810, 571);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpecijalizanti)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMentori)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.DataGridView dgvSpecijalizanti;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMentori;
         private System.Windows.Forms.Label label2;
     }
 }

@@ -23,6 +23,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
 
         private void lblOdjava_Click(object sender, EventArgs e)
         {
+            CurrentUser.OdjaviKorisnika();
             this.Close();
         }
 

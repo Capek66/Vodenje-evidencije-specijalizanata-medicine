@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,6 +66,19 @@
     <Compile Include="Administator\TrenutniKor.Designer.cs">
       <DependentUpon>TrenutniKor.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="Data\KnjizicaModel.cs" />
+    <Compile Include="Data\Kompetencije.cs" />
+    <Compile Include="Data\Korisnik.cs" />
+    <Compile Include="Data\Korisnik.partial.cs" />
+    <Compile Include="Data\Mentor.cs" />
+    <Compile Include="Data\RasporedPrograma.cs" />
+    <Compile Include="Data\Specijalizacija.cs" />
+    <Compile Include="Data\Specijalizacija.partial.cs" />
+    <Compile Include="Data\Specijalizant.cs" />
+    <Compile Include="Data\Uloga.cs" />
+    <Compile Include="Data\Zahvati.cs" />
+    <Compile Include="Data\ZavrsetakSpecijalizacije.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +225,7 @@
     <Compile Include="Specijalizant\SpecijalizacijaAdd.Designer.cs">
       <DependentUpon>SpecijalizacijaAdd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Specijalizant\SpecijalizacijePrikaz.cs" />
     <Compile Include="Specijalizant\SpecOdabir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +347,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.2.0</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

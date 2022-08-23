@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbGlMentor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPocetak = new System.Windows.Forms.DateTimePicker();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -108,12 +108,12 @@
             this.label5.TabIndex = 34;
             this.label5.Text = "Specijalističko usavršavanje specijalizant/ica započeo/la:";
             // 
-            // dateTimePicker1
+            // dtpPocetak
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 249);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(204, 20);
-            this.dateTimePicker1.TabIndex = 35;
+            this.dtpPocetak.Location = new System.Drawing.Point(16, 249);
+            this.dtpPocetak.Name = "dtpPocetak";
+            this.dtpPocetak.Size = new System.Drawing.Size(204, 20);
+            this.dtpPocetak.TabIndex = 35;
             // 
             // btnDodaj
             // 
@@ -123,6 +123,7 @@
             this.btnDodaj.TabIndex = 39;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnOdustani
             // 
@@ -132,6 +133,7 @@
             this.btnOdustani.TabIndex = 38;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // SpecijalizacijaAdd
             // 
@@ -140,7 +142,7 @@
             this.ClientSize = new System.Drawing.Size(362, 337);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpPocetak);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbGlMentor);
             this.Controls.Add(this.label3);
@@ -166,7 +168,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbGlMentor;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpPocetak;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnOdustani;
     }

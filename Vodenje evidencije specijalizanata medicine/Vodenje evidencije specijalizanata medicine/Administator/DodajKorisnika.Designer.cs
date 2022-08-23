@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbPrezime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.rbSpecijalizant = new System.Windows.Forms.RadioButton();
             this.rbMentor = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbIme = new System.Windows.Forms.TextBox();
+            this.dtpGodRod = new System.Windows.Forms.DateTimePicker();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbUstanova = new System.Windows.Forms.TextBox();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -54,12 +55,12 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Dodavanje novog korisnika";
             // 
-            // textBox1
+            // tbPrezime
             // 
-            this.textBox1.Location = new System.Drawing.Point(93, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 19;
+            this.tbPrezime.Location = new System.Drawing.Point(93, 68);
+            this.tbPrezime.Name = "tbPrezime";
+            this.tbPrezime.Size = new System.Drawing.Size(121, 20);
+            this.tbPrezime.TabIndex = 19;
             // 
             // label1
             // 
@@ -119,26 +120,26 @@
             this.rbMentor.Text = "Mentor/ica";
             this.rbMentor.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // tbIme
             // 
-            this.textBox2.Location = new System.Drawing.Point(93, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 26;
+            this.tbIme.Location = new System.Drawing.Point(93, 40);
+            this.tbIme.Name = "tbIme";
+            this.tbIme.Size = new System.Drawing.Size(121, 20);
+            this.tbIme.TabIndex = 26;
             // 
-            // dateTimePicker1
+            // dtpGodRod
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(93, 97);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 20);
-            this.dateTimePicker1.TabIndex = 27;
+            this.dtpGodRod.Location = new System.Drawing.Point(93, 97);
+            this.dtpGodRod.Name = "dtpGodRod";
+            this.dtpGodRod.Size = new System.Drawing.Size(121, 20);
+            this.dtpGodRod.TabIndex = 27;
             // 
-            // textBox3
+            // tbEmail
             // 
-            this.textBox3.Location = new System.Drawing.Point(93, 129);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 28;
+            this.tbEmail.Location = new System.Drawing.Point(93, 129);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(121, 20);
+            this.tbEmail.TabIndex = 28;
             // 
             // label6
             // 
@@ -149,12 +150,12 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Ustanova (mentor/ica):";
             // 
-            // textBox4
+            // tbUstanova
             // 
-            this.textBox4.Location = new System.Drawing.Point(127, 191);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 30;
+            this.tbUstanova.Location = new System.Drawing.Point(127, 191);
+            this.tbUstanova.Name = "tbUstanova";
+            this.tbUstanova.Size = new System.Drawing.Size(121, 20);
+            this.tbUstanova.TabIndex = 30;
             // 
             // btnDodaj
             // 
@@ -164,24 +165,36 @@
             this.btnDodaj.TabIndex = 31;
             this.btnDodaj.Text = "Dodaj korisnika";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(5, 234);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(124, 13);
+            this.lblError.TabIndex = 32;
+            this.lblError.Text = "Nisu ispunjena sva polja!";
             // 
             // DodajKorisnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbUstanova);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.dtpGodRod);
+            this.Controls.Add(this.tbIme);
             this.Controls.Add(this.rbMentor);
             this.Controls.Add(this.rbSpecijalizant);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbPrezime);
             this.Controls.Add(this.label4);
             this.Name = "DodajKorisnika";
             this.Size = new System.Drawing.Size(277, 268);
@@ -193,18 +206,19 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbPrezime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton rbSpecijalizant;
         private System.Windows.Forms.RadioButton rbMentor;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbIme;
+        private System.Windows.Forms.DateTimePicker dtpGodRod;
+        private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbUstanova;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.Label lblError;
     }
 }

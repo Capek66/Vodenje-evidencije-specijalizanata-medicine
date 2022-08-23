@@ -30,10 +30,10 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRaspored = new System.Windows.Forms.DataGridView();
             this.btnDetalji = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRaspored)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -55,13 +55,13 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Dosadašnji zapisi";
             // 
-            // dataGridView1
+            // dgvRaspored
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 57);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 268);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvRaspored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRaspored.Location = new System.Drawing.Point(7, 57);
+            this.dgvRaspored.Name = "dgvRaspored";
+            this.dgvRaspored.Size = new System.Drawing.Size(776, 268);
+            this.dgvRaspored.TabIndex = 8;
             // 
             // btnDetalji
             // 
@@ -87,12 +87,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnDetalji);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvRaspored);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "RasporedObavljanja";
             this.Size = new System.Drawing.Size(835, 390);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRaspored)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,7 +101,7 @@
         #endregion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvRaspored;
         private System.Windows.Forms.Button btnDetalji;
         private System.Windows.Forms.Button btnAddNew;
     }
