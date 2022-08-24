@@ -27,7 +27,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 
         private void btnPotpisi_Click(object sender, EventArgs e)
         {
-            stupanjNapredovanja = new StupanjNapredovanja();
+            stupanjNapredovanja = new StupanjNapredovanja(2);
             stupanjNapredovanja.ShowDialog();
         }
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vodenje_evidencije_specijalizanata_medicine.Data;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
@@ -17,15 +18,16 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
         private PracenjeZahvataMntr pracenjeZahvata;
         private SpecijalizantiMntr pregledSpec;
         private Profil profil;
+        private KnjizicaModel model;
         public IzbornikMentor()
         {
             InitializeComponent();
+            model = new KnjizicaModel();
             rasporedObavljanja = new RasporedObavljanjaMentor();
             pracenjeNap = new PracenjeNapMntr();
             pracenjeZahvata = new PracenjeZahvataMntr();
             pregledSpec = new SpecijalizantiMntr();
             profil = new Profil();
-            dohvatiSpecijalizante();
         }
 
         private void Pocetna_Click(object sender, EventArgs e)
@@ -37,12 +39,14 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(rasporedObavljanja);
+            rasporedObavljanja.UcitajZapise();
         }
 
         private void PracenjeNapredovanjaLbl_Click(object sender, EventArgs e)
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(pracenjeNap);
+            pracenjeNap.UcitajZapise();
         }
 
         private void PracenjeObavljenihZahvataLbl_Click(object sender, EventArgs e)
@@ -61,18 +65,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(profil);
-        }
-
-        private void dohvatiSpecijalizante()
-        {
-            cbSpecijalizanti.Items.Add("Izaberite specijalizanta");
-            cbSpecijalizanti.Items.Add("Mišo");
-            cbSpecijalizanti.Items.Add("Mirko");
-        }
-
-        private void tslReset_Click(object sender, EventArgs e)
-        {
-            cbSpecijalizanti.SelectedIndex = 0;
         }
     }
 }

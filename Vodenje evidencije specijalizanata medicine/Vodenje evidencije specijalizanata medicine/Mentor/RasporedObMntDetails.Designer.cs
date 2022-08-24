@@ -41,7 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblOd = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblDo = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lblOsoba = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -182,14 +182,14 @@
             this.lblOd.TabIndex = 23;
             this.lblOd.Text = "Poc";
             // 
-            // label8
+            // lblDo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(40, 207);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 13);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Kraj";
+            this.lblDo.AutoSize = true;
+            this.lblDo.Location = new System.Drawing.Point(40, 207);
+            this.lblDo.Name = "lblDo";
+            this.lblDo.Size = new System.Drawing.Size(25, 13);
+            this.lblDo.TabIndex = 25;
+            this.lblDo.Text = "Kraj";
             // 
             // label9
             // 
@@ -320,8 +320,9 @@
             this.btnPotpisi.Name = "btnPotpisi";
             this.btnPotpisi.Size = new System.Drawing.Size(123, 51);
             this.btnPotpisi.TabIndex = 38;
-            this.btnPotpisi.Text = "Označi kao pregledano i potpiši";
+            this.btnPotpisi.Text = "Označi kao pregledano";
             this.btnPotpisi.UseVisualStyleBackColor = true;
+            this.btnPotpisi.Click += new System.EventHandler(this.btnPotpisi_Click);
             // 
             // btnClose
             // 
@@ -352,7 +353,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.lblOsoba);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblDo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblOd);
             this.Controls.Add(this.label6);
@@ -389,7 +390,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblOd;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblDo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblOsoba;
         private System.Windows.Forms.Label label11;

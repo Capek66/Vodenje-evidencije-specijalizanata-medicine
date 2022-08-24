@@ -35,9 +35,7 @@
             this.SpecijalizantiLbl = new System.Windows.Forms.ToolStripLabel();
             this.Profil = new System.Windows.Forms.ToolStripLabel();
             this.Pocetna = new System.Windows.Forms.ToolStripLabel();
-            this.cbSpecijalizanti = new System.Windows.Forms.ToolStripComboBox();
             this.knjizica = new System.Windows.Forms.Panel();
-            this.tslReset = new System.Windows.Forms.ToolStripLabel();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,9 +47,7 @@
             this.PracenjeObavljenihZahvataLbl,
             this.SpecijalizantiLbl,
             this.Profil,
-            this.Pocetna,
-            this.cbSpecijalizanti,
-            this.tslReset});
+            this.Pocetna});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(1322, 25);
@@ -100,25 +96,12 @@
             this.Pocetna.Text = "Početna";
             this.Pocetna.Click += new System.EventHandler(this.Pocetna_Click);
             // 
-            // cbSpecijalizanti
-            // 
-            this.cbSpecijalizanti.Name = "cbSpecijalizanti";
-            this.cbSpecijalizanti.Size = new System.Drawing.Size(160, 25);
-            this.cbSpecijalizanti.Text = "Izaberite specijalizanta";
-            // 
             // knjizica
             // 
             this.knjizica.Location = new System.Drawing.Point(0, 28);
             this.knjizica.Name = "knjizica";
             this.knjizica.Size = new System.Drawing.Size(1322, 621);
             this.knjizica.TabIndex = 3;
-            // 
-            // tslReset
-            // 
-            this.tslReset.Name = "tslReset";
-            this.tslReset.Size = new System.Drawing.Size(62, 22);
-            this.tslReset.Text = "Reset filter";
-            this.tslReset.Click += new System.EventHandler(this.tslReset_Click);
             // 
             // IzbornikMentor
             // 
@@ -145,8 +128,6 @@
         private System.Windows.Forms.ToolStripLabel SpecijalizantiLbl;
         private System.Windows.Forms.ToolStripLabel Profil;
         private System.Windows.Forms.ToolStripLabel Pocetna;
-        private System.Windows.Forms.ToolStripComboBox cbSpecijalizanti;
         private System.Windows.Forms.Panel knjizica;
-        private System.Windows.Forms.ToolStripLabel tslReset;
     }
 }

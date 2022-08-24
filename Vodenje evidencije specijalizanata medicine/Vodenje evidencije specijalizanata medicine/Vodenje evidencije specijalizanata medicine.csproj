@@ -91,6 +91,7 @@
     <Compile Include="Mentor\IzbornikMentor.Designer.cs">
       <DependentUpon>IzbornikMentor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mentor\KompPrikaz.cs" />
     <Compile Include="Mentor\PocetnaMentori.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +134,7 @@
     <Compile Include="Mentor\PregledSpec.Designer.cs">
       <DependentUpon>PregledSpec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mentor\RaspObavPrikaz.cs" />
     <Compile Include="Mentor\RasporedObavljanjaMentor.cs">
       <SubType>UserControl</SubType>
     </Compile>

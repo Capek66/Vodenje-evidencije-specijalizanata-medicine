@@ -42,6 +42,7 @@
             this.btnOdaberi.TabIndex = 0;
             this.btnOdaberi.Text = "Odaberi";
             this.btnOdaberi.UseVisualStyleBackColor = true;
+            this.btnOdaberi.Click += new System.EventHandler(this.btnOdaberi_Click);
             // 
             // btnOdustani
             // 

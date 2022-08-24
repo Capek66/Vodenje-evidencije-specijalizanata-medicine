@@ -28,27 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPotpisi = new System.Windows.Forms.Button();
+            this.btnPregledaj = new System.Windows.Forms.Button();
             this.btnDetalji = new System.Windows.Forms.Button();
             this.dgvRaspored = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbSpecijalizanti = new System.Windows.Forms.ComboBox();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRaspored)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnPotpisi
+            // btnPregledaj
             // 
-            this.btnPotpisi.Location = new System.Drawing.Point(661, 359);
-            this.btnPotpisi.Name = "btnPotpisi";
-            this.btnPotpisi.Size = new System.Drawing.Size(123, 51);
-            this.btnPotpisi.TabIndex = 15;
-            this.btnPotpisi.Text = "Označi kao pregledano i potpiši";
-            this.btnPotpisi.UseVisualStyleBackColor = true;
+            this.btnPregledaj.Location = new System.Drawing.Point(1147, 359);
+            this.btnPregledaj.Name = "btnPregledaj";
+            this.btnPregledaj.Size = new System.Drawing.Size(123, 51);
+            this.btnPregledaj.TabIndex = 15;
+            this.btnPregledaj.Text = "Označi kao pregledano";
+            this.btnPregledaj.UseVisualStyleBackColor = true;
+            this.btnPregledaj.Click += new System.EventHandler(this.btnPregledaj_Click);
             // 
             // btnDetalji
             // 
-            this.btnDetalji.Location = new System.Drawing.Point(568, 359);
+            this.btnDetalji.Location = new System.Drawing.Point(1054, 359);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(87, 51);
             this.btnDetalji.TabIndex = 14;
@@ -61,7 +65,7 @@
             this.dgvRaspored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRaspored.Location = new System.Drawing.Point(8, 85);
             this.dgvRaspored.Name = "dgvRaspored";
-            this.dgvRaspored.Size = new System.Drawing.Size(776, 268);
+            this.dgvRaspored.Size = new System.Drawing.Size(1262, 268);
             this.dgvRaspored.TabIndex = 13;
             // 
             // label1
@@ -93,18 +97,49 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Označite zapis za potpisivanje";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(979, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Filter:";
+            // 
+            // cbSpecijalizanti
+            // 
+            this.cbSpecijalizanti.FormattingEnabled = true;
+            this.cbSpecijalizanti.Location = new System.Drawing.Point(1017, 61);
+            this.cbSpecijalizanti.Name = "cbSpecijalizanti";
+            this.cbSpecijalizanti.Size = new System.Drawing.Size(172, 21);
+            this.cbSpecijalizanti.TabIndex = 18;
+            this.cbSpecijalizanti.SelectedIndexChanged += new System.EventHandler(this.cbSpecijalizanti_SelectedIndexChanged);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(1195, 61);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 21);
+            this.btnReset.TabIndex = 19;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // RasporedObavljanjaMentor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.cbSpecijalizanti);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnPotpisi);
+            this.Controls.Add(this.btnPregledaj);
             this.Controls.Add(this.btnDetalji);
             this.Controls.Add(this.dgvRaspored);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "RasporedObavljanjaMentor";
-            this.Size = new System.Drawing.Size(809, 428);
+            this.Size = new System.Drawing.Size(1273, 428);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRaspored)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,11 +148,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnPotpisi;
+        private System.Windows.Forms.Button btnPregledaj;
         private System.Windows.Forms.Button btnDetalji;
         private System.Windows.Forms.DataGridView dgvRaspored;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbSpecijalizanti;
+        private System.Windows.Forms.Button btnReset;
     }
 }

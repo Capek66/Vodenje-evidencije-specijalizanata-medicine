@@ -28,6 +28,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 
         private void btnOdjava_Click(object sender, EventArgs e)
         {
+            CurrentUser.OdjaviKorisnika();
             this.Close();
         }
     }
