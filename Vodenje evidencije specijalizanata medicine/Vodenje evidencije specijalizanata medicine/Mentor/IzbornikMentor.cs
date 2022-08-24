@@ -53,6 +53,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(pracenjeZahvata);
+            pracenjeZahvata.UcitajZapise();
         }
 
         private void SpecijalizantiLbl_Click(object sender, EventArgs e)

@@ -159,6 +159,7 @@
     <Compile Include="Mentor\StupanjNapredovanja.Designer.cs">
       <DependentUpon>StupanjNapredovanja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mentor\ZahvatiPrikaz.cs" />
     <Compile Include="Specijalizant\KnjizicaPocetnaSpec.cs">
       <SubType>Form</SubType>
     </Compile>

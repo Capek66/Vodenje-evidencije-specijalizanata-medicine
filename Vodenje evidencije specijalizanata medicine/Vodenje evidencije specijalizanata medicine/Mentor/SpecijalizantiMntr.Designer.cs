@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.btnPregledaj = new System.Windows.Forms.Button();
+            this.btnPregMntr = new System.Windows.Forms.Button();
             this.dgvGlMentor = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMentor = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnPregGlMntr = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGlMentor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMentor)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -49,22 +50,22 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "Označite specijalizanta i pritisnite \"Pregledaj specijalizanta\" za detalje";
             // 
-            // btnPregledaj
+            // btnPregMntr
             // 
-            this.btnPregledaj.Location = new System.Drawing.Point(697, 551);
-            this.btnPregledaj.Name = "btnPregledaj";
-            this.btnPregledaj.Size = new System.Drawing.Size(87, 51);
-            this.btnPregledaj.TabIndex = 32;
-            this.btnPregledaj.Text = "Pregledaj specijalizanta";
-            this.btnPregledaj.UseVisualStyleBackColor = true;
-            this.btnPregledaj.Click += new System.EventHandler(this.btnPregledaj_Click);
+            this.btnPregMntr.Location = new System.Drawing.Point(1183, 551);
+            this.btnPregMntr.Name = "btnPregMntr";
+            this.btnPregMntr.Size = new System.Drawing.Size(87, 51);
+            this.btnPregMntr.TabIndex = 32;
+            this.btnPregMntr.Text = "Pregledaj specijalizanta";
+            this.btnPregMntr.UseVisualStyleBackColor = true;
+            this.btnPregMntr.Click += new System.EventHandler(this.btnPregledaj_Click);
             // 
             // dgvGlMentor
             // 
             this.dgvGlMentor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGlMentor.Location = new System.Drawing.Point(8, 85);
             this.dgvGlMentor.Name = "dgvGlMentor";
-            this.dgvGlMentor.Size = new System.Drawing.Size(776, 198);
+            this.dgvGlMentor.Size = new System.Drawing.Size(1262, 198);
             this.dgvGlMentor.TabIndex = 31;
             // 
             // label1
@@ -96,13 +97,13 @@
             this.label3.TabIndex = 37;
             this.label3.Text = "Označite specijalizanta i pritisnite \"Pregledaj specijalizanta\" za detalje";
             // 
-            // dataGridView1
+            // dgvMentor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 347);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 198);
-            this.dataGridView1.TabIndex = 36;
+            this.dgvMentor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMentor.Location = new System.Drawing.Point(8, 347);
+            this.dgvMentor.Name = "dgvMentor";
+            this.dgvMentor.Size = new System.Drawing.Size(1262, 198);
+            this.dgvMentor.TabIndex = 36;
             // 
             // label5
             // 
@@ -114,22 +115,33 @@
             this.label5.TabIndex = 35;
             this.label5.Text = "Vi ste mentor";
             // 
+            // btnPregGlMntr
+            // 
+            this.btnPregGlMntr.Location = new System.Drawing.Point(1183, 289);
+            this.btnPregGlMntr.Name = "btnPregGlMntr";
+            this.btnPregGlMntr.Size = new System.Drawing.Size(87, 51);
+            this.btnPregGlMntr.TabIndex = 38;
+            this.btnPregGlMntr.Text = "Pregledaj specijalizanta";
+            this.btnPregGlMntr.UseVisualStyleBackColor = true;
+            this.btnPregGlMntr.Click += new System.EventHandler(this.btnPregGlMntr_Click);
+            // 
             // SpecijalizantiMntr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnPregGlMntr);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMentor);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnPregledaj);
+            this.Controls.Add(this.btnPregMntr);
             this.Controls.Add(this.dgvGlMentor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "SpecijalizantiMntr";
-            this.Size = new System.Drawing.Size(807, 622);
+            this.Size = new System.Drawing.Size(1273, 609);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGlMentor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMentor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,12 +150,13 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPregledaj;
+        private System.Windows.Forms.Button btnPregMntr;
         private System.Windows.Forms.DataGridView dgvGlMentor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMentor;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnPregGlMntr;
     }
 }

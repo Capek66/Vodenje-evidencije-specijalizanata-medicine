@@ -116,8 +116,9 @@
             this.btnPotpisi.Name = "btnPotpisi";
             this.btnPotpisi.Size = new System.Drawing.Size(123, 51);
             this.btnPotpisi.TabIndex = 89;
-            this.btnPotpisi.Text = "Označi kao pregledano i potpiši";
+            this.btnPotpisi.Text = "Označi kao pregledano";
             this.btnPotpisi.UseVisualStyleBackColor = true;
+            this.btnPotpisi.Click += new System.EventHandler(this.btnPotpisi_Click);
             // 
             // lblPotpisGlMntr
             // 

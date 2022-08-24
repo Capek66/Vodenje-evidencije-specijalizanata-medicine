@@ -48,6 +48,7 @@
             // 
             // btnDnevnik
             // 
+            this.btnDnevnik.Enabled = false;
             this.btnDnevnik.Location = new System.Drawing.Point(265, 135);
             this.btnDnevnik.Name = "btnDnevnik";
             this.btnDnevnik.Size = new System.Drawing.Size(109, 38);

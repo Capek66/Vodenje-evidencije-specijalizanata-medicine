@@ -42,7 +42,7 @@
             // 
             // btnPregledaj
             // 
-            this.btnPregledaj.Location = new System.Drawing.Point(1147, 359);
+            this.btnPregledaj.Location = new System.Drawing.Point(1147, 511);
             this.btnPregledaj.Name = "btnPregledaj";
             this.btnPregledaj.Size = new System.Drawing.Size(123, 51);
             this.btnPregledaj.TabIndex = 15;
@@ -52,7 +52,7 @@
             // 
             // btnDetalji
             // 
-            this.btnDetalji.Location = new System.Drawing.Point(1054, 359);
+            this.btnDetalji.Location = new System.Drawing.Point(1054, 511);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(87, 51);
             this.btnDetalji.TabIndex = 14;
@@ -65,7 +65,7 @@
             this.dgvRaspored.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRaspored.Location = new System.Drawing.Point(8, 85);
             this.dgvRaspored.Name = "dgvRaspored";
-            this.dgvRaspored.Size = new System.Drawing.Size(1262, 268);
+            this.dgvRaspored.Size = new System.Drawing.Size(1262, 420);
             this.dgvRaspored.TabIndex = 13;
             // 
             // label1
@@ -139,7 +139,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "RasporedObavljanjaMentor";
-            this.Size = new System.Drawing.Size(1273, 428);
+            this.Size = new System.Drawing.Size(1273, 565);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRaspored)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
