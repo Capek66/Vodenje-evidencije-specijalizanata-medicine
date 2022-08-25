@@ -208,17 +208,11 @@
     <Compile Include="Specijalizant\PracZahDet.Designer.cs">
       <DependentUpon>PracZahDet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Specijalizant\Profil.cs">
+    <Compile Include="Profil.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Specijalizant\Profil.Designer.cs">
+    <Compile Include="Profil.Designer.cs">
       <DependentUpon>Profil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Specijalizant\ProfilUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Specijalizant\ProfilUpdate.Designer.cs">
-      <DependentUpon>ProfilUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -337,11 +331,8 @@
     <EmbeddedResource Include="Specijalizant\PracZahDet.resx">
       <DependentUpon>PracZahDet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Specijalizant\Profil.resx">
+    <EmbeddedResource Include="Profil.resx">
       <DependentUpon>Profil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Specijalizant\ProfilUpdate.resx">
-      <DependentUpon>ProfilUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

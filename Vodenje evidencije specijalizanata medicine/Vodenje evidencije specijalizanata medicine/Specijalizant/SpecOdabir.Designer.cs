@@ -94,7 +94,7 @@
             this.Controls.Add(this.btnDnevnik);
             this.Controls.Add(this.btnKnjizica);
             this.Name = "SpecOdabir";
-            this.Text = "SpecOdabir";
+            this.Text = "Evidencija specijalizanata";
             this.ResumeLayout(false);
             this.PerformLayout();
 

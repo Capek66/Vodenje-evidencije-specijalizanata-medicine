@@ -39,7 +39,7 @@
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(772, 15);
+            this.btnAddNew.Location = new System.Drawing.Point(1077, 12);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(192, 37);
             this.btnAddNew.TabIndex = 20;
@@ -49,7 +49,7 @@
             // 
             // btnDetalji
             // 
-            this.btnDetalji.Location = new System.Drawing.Point(889, 329);
+            this.btnDetalji.Location = new System.Drawing.Point(1194, 481);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(75, 23);
             this.btnDetalji.TabIndex = 19;
@@ -62,7 +62,7 @@
             this.dgvSpecijalizacije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSpecijalizacije.Location = new System.Drawing.Point(7, 55);
             this.dgvSpecijalizacije.Name = "dgvSpecijalizacije";
-            this.dgvSpecijalizacije.Size = new System.Drawing.Size(957, 268);
+            this.dgvSpecijalizacije.Size = new System.Drawing.Size(1262, 420);
             this.dgvSpecijalizacije.TabIndex = 18;
             // 
             // label1
@@ -86,7 +86,7 @@
             // 
             // btnOdaberiSpec
             // 
-            this.btnOdaberiSpec.Location = new System.Drawing.Point(749, 329);
+            this.btnOdaberiSpec.Location = new System.Drawing.Point(1054, 481);
             this.btnOdaberiSpec.Name = "btnOdaberiSpec";
             this.btnOdaberiSpec.Size = new System.Drawing.Size(134, 23);
             this.btnOdaberiSpec.TabIndex = 21;
@@ -105,7 +105,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "SpecUsavrsavanja";
-            this.Size = new System.Drawing.Size(977, 395);
+            this.Size = new System.Drawing.Size(1273, 565);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpecijalizacije)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

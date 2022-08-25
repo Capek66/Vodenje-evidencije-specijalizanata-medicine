@@ -38,7 +38,7 @@
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(715, 329);
+            this.btnAddNew.Location = new System.Drawing.Point(1084, 481);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(104, 23);
             this.btnAddNew.TabIndex = 20;
@@ -48,7 +48,7 @@
             // 
             // btnDetalji
             // 
-            this.btnDetalji.Location = new System.Drawing.Point(825, 329);
+            this.btnDetalji.Location = new System.Drawing.Point(1194, 481);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(75, 23);
             this.btnDetalji.TabIndex = 19;
@@ -61,7 +61,7 @@
             this.dgvZahvati.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvZahvati.Location = new System.Drawing.Point(7, 55);
             this.dgvZahvati.Name = "dgvZahvati";
-            this.dgvZahvati.Size = new System.Drawing.Size(893, 268);
+            this.dgvZahvati.Size = new System.Drawing.Size(1262, 420);
             this.dgvZahvati.TabIndex = 18;
             // 
             // label1
@@ -93,7 +93,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "PracenjeZahvata";
-            this.Size = new System.Drawing.Size(916, 370);
+            this.Size = new System.Drawing.Size(1273, 565);
             ((System.ComponentModel.ISupportInitialize)(this.dgvZahvati)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

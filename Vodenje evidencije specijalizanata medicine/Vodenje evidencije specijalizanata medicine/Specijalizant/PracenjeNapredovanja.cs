@@ -41,6 +41,15 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             dgvKompetencije.Columns[10].Visible = false;
             dgvKompetencije.Columns[1].HeaderText = "kompetencije";
             dgvKompetencije.Columns[9].HeaderText = "mentor";
+
+            if(bindingSource.Count == 0)
+            {
+                btnDetalji.Enabled = false;
+            }
+            else
+            {
+                btnDetalji.Enabled = true;
+            }
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)

@@ -14,11 +14,13 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
     {
         private DodajKorisnika dodajKorisnika;
         private TrenutniKor trenutniKor;
+        private Profil profil;
         public IzbornikAdm()
         {
             InitializeComponent();
             dodajKorisnika = new DodajKorisnika();
             trenutniKor = new TrenutniKor();
+            profil = new Profil();
         }
 
         private void lblOdjava_Click(object sender, EventArgs e)
@@ -37,6 +39,15 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
         {
             panel.Controls.Clear();
             panel.Controls.Add(trenutniKor);
+            trenutniKor.UcitajSpecijalizante();
+            trenutniKor.UcitajMentore();
+        }
+
+        private void lblProfil_Click(object sender, EventArgs e)
+        {
+            panel.Controls.Clear();
+            panel.Controls.Add(profil);
+            profil.UcitajPodatke();
         }
     }
 }

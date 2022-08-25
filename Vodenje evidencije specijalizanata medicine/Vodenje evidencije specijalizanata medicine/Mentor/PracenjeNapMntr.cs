@@ -117,6 +117,17 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             BindingSource bindingSource = new BindingSource(sql.ToList(), "");
             dgvKompetencije.DataSource = bindingSource;
             dgvKompetencije.Columns[0].Visible = false;
+
+            if(bindingSource.Count == 0)
+            {
+                btnDetalji.Enabled = false;
+                btnPotpisi.Enabled = false;
+            }
+            else
+            {
+                btnDetalji.Enabled = true;
+                btnPotpisi.Enabled = true;
+            }
         }
 
         private void BezFiltera()
@@ -140,6 +151,17 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             BindingSource bindingSource = new BindingSource(sql.ToList(), "");
             dgvKompetencije.DataSource = bindingSource;
             dgvKompetencije.Columns[0].Visible = false;
+
+            if (bindingSource.Count == 0)
+            {
+                btnDetalji.Enabled = false;
+                btnPotpisi.Enabled = false;
+            }
+            else
+            {
+                btnDetalji.Enabled = true;
+                btnPotpisi.Enabled = true;
+            }
         }
     }
 }

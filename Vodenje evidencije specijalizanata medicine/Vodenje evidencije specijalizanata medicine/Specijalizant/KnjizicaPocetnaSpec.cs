@@ -25,6 +25,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             pracenjeZahvata = new PracenjeZahvata();
             specUsavrsavanja = new SpecUsavrsavanja();
             profil = new Profil();
+            ProvjeriSpecijalizaciju();
         }
 
         private void RasporedObavljanjaLbl_Click(object sender, EventArgs e)
@@ -45,12 +46,12 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(profil);
+            profil.UcitajPodatke();
         }
 
         private void Pocetna_Click(object sender, EventArgs e)
         {
             this.Close();
-            
         }
 
         private void PracenjeObavljenihZahvataLbl_Click(object sender, EventArgs e)
@@ -64,6 +65,23 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(specUsavrsavanja);
+            specUsavrsavanja.UcitajSpecijalizacije();
+        }
+
+        private void ProvjeriSpecijalizaciju()
+        {
+            if(CurrentUser.odabranaSpecijalizacija == null)
+            {
+                RasporedObavljanjaLbl.Enabled = false;
+                PracenjeNapredovanjaLbl.Enabled = false;
+                PracenjeObavljenihZahvataLbl.Enabled = false;
+            }
+            else
+            {
+                RasporedObavljanjaLbl.Enabled = true;
+                PracenjeNapredovanjaLbl.Enabled = true;
+                PracenjeObavljenihZahvataLbl.Enabled = true;
+            }
         }
     }
 }

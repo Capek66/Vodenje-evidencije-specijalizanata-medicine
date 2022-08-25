@@ -64,8 +64,8 @@
             // PracenjeNapredovanjaLbl
             // 
             this.PracenjeNapredovanjaLbl.Name = "PracenjeNapredovanjaLbl";
-            this.PracenjeNapredovanjaLbl.Size = new System.Drawing.Size(127, 22);
-            this.PracenjeNapredovanjaLbl.Text = "Praćenje napredovanja";
+            this.PracenjeNapredovanjaLbl.Size = new System.Drawing.Size(262, 22);
+            this.PracenjeNapredovanjaLbl.Text = "Praćenje napredovanja u stjecanju kompetencija";
             this.PracenjeNapredovanjaLbl.Click += new System.EventHandler(this.PracenjeNapredovanjaLbl_Click);
             // 
             // PracenjeObavljenihZahvataLbl

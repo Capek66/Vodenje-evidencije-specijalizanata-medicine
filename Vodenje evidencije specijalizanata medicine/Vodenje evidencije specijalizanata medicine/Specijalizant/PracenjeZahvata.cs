@@ -40,6 +40,15 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             dgvZahvati.Columns[9].Visible = false;
             dgvZahvati.Columns[11].Visible = false;
             dgvZahvati.Columns[10].HeaderText = "mentor";
+
+            if (bindingSource.Count == 0)
+            {
+                btnDetalji.Enabled = false;
+            }
+            else
+            {
+                btnDetalji.Enabled = true;
+            }
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)

@@ -289,7 +289,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "PracenjeNapMntrDetalji";
-            this.Text = "Napredovanje detalji";
+            this.Text = "Detalji";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,7 +18,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         public SpecOdabir()
         {
             InitializeComponent();
-            knjizicaPocetnaSpec = new KnjizicaPocetnaSpec();
             model = new KnjizicaModel();
             UcitajSpecijalizacije();
         }
@@ -27,6 +26,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         {
             PostaviSpecijalizaciju();
             this.Hide();
+            knjizicaPocetnaSpec = new KnjizicaPocetnaSpec();
             knjizicaPocetnaSpec.ShowDialog();
             this.Show();
         }

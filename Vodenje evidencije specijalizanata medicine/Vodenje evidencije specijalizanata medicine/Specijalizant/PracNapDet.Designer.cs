@@ -255,7 +255,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Name = "PracNapDet";
-            this.Text = "PracNapDet";
+            this.Text = "Detalji";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -33,6 +33,7 @@
             this.lblNovi = new System.Windows.Forms.ToolStripLabel();
             this.lblOdjava = new System.Windows.Forms.ToolStripLabel();
             this.panel = new System.Windows.Forms.Panel();
+            this.lblProfil = new System.Windows.Forms.ToolStripLabel();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblTrenutni,
             this.lblNovi,
+            this.lblProfil,
             this.lblOdjava});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
@@ -76,6 +78,13 @@
             this.panel.Size = new System.Drawing.Size(1322, 619);
             this.panel.TabIndex = 5;
             // 
+            // lblProfil
+            // 
+            this.lblProfil.Name = "lblProfil";
+            this.lblProfil.Size = new System.Drawing.Size(35, 22);
+            this.lblProfil.Text = "Profil";
+            this.lblProfil.Click += new System.EventHandler(this.lblProfil_Click);
+            // 
             // IzbornikAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,5 +108,6 @@
         private System.Windows.Forms.ToolStripLabel lblNovi;
         private System.Windows.Forms.ToolStripLabel lblOdjava;
         private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.ToolStripLabel lblProfil;
     }
 }

@@ -78,6 +78,15 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 
             BindingSource bsMntr = new BindingSource(mentor, "");
             dgvMentor.DataSource = bsMntr;
+
+            if(bsMntr.Count == 0)
+            {
+                btnPregMntr.Enabled = false;
+            }
+            else
+            {
+                btnPregMntr.Enabled = true;
+            }
         }
 
         private void UcitajGlMentor()
@@ -92,6 +101,15 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             }
             BindingSource bsGlMntr = new BindingSource(glMentor, "");
             dgvGlMentor.DataSource = bsGlMntr;
+
+            if (bsGlMntr.Count == 0)
+            {
+                btnPregGlMntr.Enabled = false;
+            }
+            else
+            {
+                btnPregGlMntr.Enabled = true;
+            }
         }
 
         private void btnPregGlMntr_Click(object sender, EventArgs e)

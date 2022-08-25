@@ -60,7 +60,7 @@
             this.tbPrezime.Location = new System.Drawing.Point(93, 68);
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.Size = new System.Drawing.Size(121, 20);
-            this.tbPrezime.TabIndex = 19;
+            this.tbPrezime.TabIndex = 27;
             // 
             // label1
             // 
@@ -104,7 +104,7 @@
             this.rbSpecijalizant.Location = new System.Drawing.Point(8, 166);
             this.rbSpecijalizant.Name = "rbSpecijalizant";
             this.rbSpecijalizant.Size = new System.Drawing.Size(103, 17);
-            this.rbSpecijalizant.TabIndex = 24;
+            this.rbSpecijalizant.TabIndex = 30;
             this.rbSpecijalizant.TabStop = true;
             this.rbSpecijalizant.Text = "Specijalizant/ica";
             this.rbSpecijalizant.UseVisualStyleBackColor = true;
@@ -132,14 +132,14 @@
             this.dtpGodRod.Location = new System.Drawing.Point(93, 97);
             this.dtpGodRod.Name = "dtpGodRod";
             this.dtpGodRod.Size = new System.Drawing.Size(121, 20);
-            this.dtpGodRod.TabIndex = 27;
+            this.dtpGodRod.TabIndex = 28;
             // 
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(93, 129);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(121, 20);
-            this.tbEmail.TabIndex = 28;
+            this.tbEmail.TabIndex = 29;
             // 
             // label6
             // 
@@ -155,14 +155,14 @@
             this.tbUstanova.Location = new System.Drawing.Point(127, 191);
             this.tbUstanova.Name = "tbUstanova";
             this.tbUstanova.Size = new System.Drawing.Size(121, 20);
-            this.tbUstanova.TabIndex = 30;
+            this.tbUstanova.TabIndex = 31;
             // 
             // btnDodaj
             // 
             this.btnDodaj.Location = new System.Drawing.Point(154, 229);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(94, 23);
-            this.btnDodaj.TabIndex = 31;
+            this.btnDodaj.TabIndex = 32;
             this.btnDodaj.Text = "Dodaj korisnika";
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);

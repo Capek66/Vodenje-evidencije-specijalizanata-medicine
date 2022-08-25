@@ -60,12 +60,14 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(pregledSpec);
+            pregledSpec.UcitajSpecijalizante();
         }
 
         private void Profil_Click(object sender, EventArgs e)
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(profil);
+            profil.UcitajPodatke();
         }
     }
 }

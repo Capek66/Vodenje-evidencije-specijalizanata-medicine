@@ -48,7 +48,7 @@
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(598, 329);
+            this.btnAddNew.Location = new System.Drawing.Point(1084, 481);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(104, 23);
             this.btnAddNew.TabIndex = 15;
@@ -58,7 +58,7 @@
             // 
             // btnDetalji
             // 
-            this.btnDetalji.Location = new System.Drawing.Point(708, 329);
+            this.btnDetalji.Location = new System.Drawing.Point(1194, 481);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(75, 23);
             this.btnDetalji.TabIndex = 14;
@@ -71,7 +71,7 @@
             this.dgvKompetencije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKompetencije.Location = new System.Drawing.Point(7, 55);
             this.dgvKompetencije.Name = "dgvKompetencije";
-            this.dgvKompetencije.Size = new System.Drawing.Size(776, 268);
+            this.dgvKompetencije.Size = new System.Drawing.Size(1262, 420);
             this.dgvKompetencije.TabIndex = 13;
             // 
             // label1
@@ -93,7 +93,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Name = "PracenjeNapredovanja";
-            this.Size = new System.Drawing.Size(828, 392);
+            this.Size = new System.Drawing.Size(1273, 565);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKompetencije)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

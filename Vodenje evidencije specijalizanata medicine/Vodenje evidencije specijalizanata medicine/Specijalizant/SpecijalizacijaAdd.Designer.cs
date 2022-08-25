@@ -152,7 +152,7 @@
             this.Controls.Add(this.tbSpecNaziv);
             this.Controls.Add(this.label4);
             this.Name = "SpecijalizacijaAdd";
-            this.Text = "SpecijalizacijaAdd";
+            this.Text = "Dodavanje nove specijalizacije";
             this.ResumeLayout(false);
             this.PerformLayout();
 

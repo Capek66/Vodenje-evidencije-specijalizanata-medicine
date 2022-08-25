@@ -22,7 +22,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
             UcitajMentore();
         }
 
-        private void UcitajSpecijalizante()
+        public void UcitajSpecijalizante()
         {
             var sql = from specijalizanti in model.Korisnik
                       where specijalizanti.uloga == 3
@@ -43,7 +43,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
             dgvSpecijalizanti.Columns[14].Visible = false;
         }
 
-        private void UcitajMentore()
+        public void UcitajMentore()
         {
             var sql = from mentori in model.Korisnik
                       where mentori.uloga == 2

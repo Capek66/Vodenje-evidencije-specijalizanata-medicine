@@ -35,12 +35,20 @@ namespace Vodenje_evidencije_specijalizanata_medicine
 
             BindingSource bindingSource = new BindingSource(sql.ToList(), "");
             dgvRaspored.DataSource = bindingSource;
-
             dgvRaspored.Columns[0].Visible = false;
             dgvRaspored.Columns[8].Visible = false;
             dgvRaspored.Columns[11].Visible = false;
             dgvRaspored.Columns[13].Visible = false;
             dgvRaspored.Columns[12].HeaderText = "mentor";
+
+            if (bindingSource.Count == 0)
+            {
+                btnDetalji.Enabled = false;
+            }
+            else
+            {
+                btnDetalji.Enabled = true;
+            }
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)

@@ -23,7 +23,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             UcitajSpecijalizacije();
         }
 
-        private void UcitajSpecijalizacije()
+        public void UcitajSpecijalizacije()
         {
             var sql = from specijalizacije in model.Specijalizacija.Include("Korisnik1")
                         where specijalizacije.specijalizant == CurrentUser.prijavljeniKorisnik.id
@@ -44,6 +44,17 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             BindingSource bindingSource = new BindingSource(sql.ToList(), "");
             dgvSpecijalizacije.DataSource = bindingSource;
             dgvSpecijalizacije.Columns[0].Visible = false;
+
+            if (bindingSource.Count == 0)
+            {
+                btnDetalji.Enabled = false;
+                btnOdaberiSpec.Enabled = false;
+            }
+            else
+            {
+                btnDetalji.Enabled = true;
+                btnOdaberiSpec.Enabled = true;
+            }
         }
 
         private void btnOdaberiSpec_Click(object sender, EventArgs e)
