@@ -22,8 +22,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         public Login()
         {
             InitializeComponent();
-            tbEmail.Text = "ihorvat@gmail.com";
-            tbPass.Text = "horvat";
             lblPogresnaLoz.Visible = false;
         }
 
