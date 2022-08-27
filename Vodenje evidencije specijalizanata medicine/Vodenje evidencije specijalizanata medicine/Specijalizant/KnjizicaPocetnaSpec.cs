@@ -66,6 +66,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             knjizica.Controls.Clear();
             knjizica.Controls.Add(specUsavrsavanja);
             specUsavrsavanja.UcitajSpecijalizacije();
+            ProvjeriSpecijalizaciju();
         }
 
         private void ProvjeriSpecijalizaciju()

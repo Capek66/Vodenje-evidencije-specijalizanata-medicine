@@ -65,6 +65,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
                 };
                 model.ZavrsetakSpecijalizacije.Add(zavrsetakSpecijalizacije);
                 model.SaveChanges();
+                CurrentUser.OdaberiSpecijalizaciju(novaSpecijalizacija);
                 this.Close();
             }
         }
