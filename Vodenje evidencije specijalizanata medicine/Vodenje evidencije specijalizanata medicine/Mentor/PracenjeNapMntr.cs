@@ -7,25 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
     public partial class PracenjeNapMntr : UserControl
     {
+        private MentorLogika mentorLogika;
         private PracenjeNapMntrDetalji pracenjeNap;
         private StupanjNapredovanja stupanjNapredovanja;
-        private KnjizicaModel model;
         public PracenjeNapMntr()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
+            mentorLogika = new MentorLogika();
             DohvatiSpecijalizante();
         }
 
         private void btnDetalji_Click(object sender, EventArgs e)
         {
-            Kompetencije odabranaKompetencija = (dgvKompetencije.CurrentRow.DataBoundItem as Mentor.KompPrikaz).Kompetencije;
+            Kompetencije odabranaKompetencija = (dgvKompetencije.CurrentRow.DataBoundItem as KompPrikaz).Kompetencije;
             pracenjeNap = new PracenjeNapMntrDetalji(odabranaKompetencija);
             pracenjeNap.ShowDialog();
             UcitajZapise();
@@ -38,46 +39,35 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             if(stupanjNapredovanja.odabraniStupanj != 0)
             {
                 int odabraniStupanjNap = stupanjNapredovanja.odabraniStupanj;
-                Kompetencije odabranaKompetencija = (dgvKompetencije.CurrentRow.DataBoundItem as Mentor.KompPrikaz).Kompetencije;
+                Kompetencije odabranaKompetencija = (dgvKompetencije.CurrentRow.DataBoundItem as KompPrikaz).Kompetencije;
 
-                if (odabranaKompetencija.mentor == CurrentUser.prijavljeniKorisnik.id)
+                if (odabranaKompetencija.mentor == Sloj_obrade.CurrentUser.prijavljeniKorisnik.id)
                 {
-                    odabranaKompetencija.potpis_mentor = "Pregledano!";
-                    odabranaKompetencija.datum_mentor = DateTime.Now;
-                    odabranaKompetencija.stupanj_napredovanja = odabraniStupanjNap;
+                    mentorLogika.Pregledaj(odabranaKompetencija.id, 2, 1, odabraniStupanjNap);
                 }
-                if (odabranaKompetencija.Specijalizacija1.Korisnik1.id == CurrentUser.prijavljeniKorisnik.id)
+                if (odabranaKompetencija.Specijalizacija1.Korisnik1.id == Sloj_obrade.CurrentUser.prijavljeniKorisnik.id)
                 {
-                    odabranaKompetencija.potpis_gl_mentor = "Pregledano!";
-                    odabranaKompetencija.datum_gl_mentor = DateTime.Now;
+                    mentorLogika.Pregledaj(odabranaKompetencija.id, 2, 2, 0);
                 }
-                model.SaveChanges();
                 UcitajZapise();
             }
             
         }
-
         private void DohvatiSpecijalizante()
         {
             cbSpecijalizanti.Items.Add("Izaberite specijalizanta");
 
-            var sql = from spec in model.Korisnik
-                      where spec.uloga == 3
-                      select spec;
-
-            foreach (var specijalizant in sql.ToList())
+            foreach (var specijalizant in mentorLogika.DohvatiSpecijalizante())
             {
                 cbSpecijalizanti.Items.Add(specijalizant);
             }
             cbSpecijalizanti.SelectedIndex = 0;
         }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             cbSpecijalizanti.SelectedIndex = 0;
             UcitajZapise();
         }
-
         public void UcitajZapise()
         {
             if (cbSpecijalizanti.SelectedIndex != 0)
@@ -89,32 +79,15 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
                 BezFiltera();
             }
         }
-
         private void cbSpecijalizanti_SelectedIndexChanged(object sender, EventArgs e)
         {
             UcitajZapise();
         }
-
         private void SaFilterom()
         {
             Korisnik odabraniKorisnik = cbSpecijalizanti.SelectedItem as Korisnik;
-            var sql = from zapisi in model.Kompetencije.Include("Korisnik").Include("Specijalizacija1")
-                      where ((zapisi.mentor == CurrentUser.prijavljeniKorisnik.id && zapisi.potpis_mentor == null) || (zapisi.Specijalizacija1.Korisnik1.id == CurrentUser.prijavljeniKorisnik.id && zapisi.potpis_gl_mentor == null)) && (zapisi.Specijalizacija1.Korisnik.id == odabraniKorisnik.id)
-                      select new Mentor.KompPrikaz
-                      {
-                          Kompetencije = zapisi,
-                          Specijalizant = zapisi.Specijalizacija1.Korisnik.ime + " " + zapisi.Specijalizacija1.Korisnik.prezime,
-                          Kompetencija = zapisi.kompetencije1,
-                          Stupanj_napredovanja = zapisi.stupanj_napredovanja,
-                          Mentor = zapisi.Korisnik.ime + " " + zapisi.Korisnik.prezime,
-                          Datum_mentor = zapisi.datum_mentor,
-                          Potpis_mentor = zapisi.potpis_mentor,
-                          Datum_gl_mentor = zapisi.datum_gl_mentor,
-                          Potpis_gl_mentor = zapisi.potpis_gl_mentor,
-                          Specijalizacija = zapisi.Specijalizacija1.specijalizacija1
-                      };
 
-            BindingSource bindingSource = new BindingSource(sql.ToList(), "");
+            BindingSource bindingSource = new BindingSource(mentorLogika.PracNapZapisi(true, odabraniKorisnik.id), "");
             dgvKompetencije.DataSource = bindingSource;
             dgvKompetencije.Columns[0].Visible = false;
 
@@ -129,26 +102,9 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
                 btnPotpisi.Enabled = true;
             }
         }
-
         private void BezFiltera()
         {
-            var sql = from zapisi in model.Kompetencije.Include("Korisnik").Include("Specijalizacija1")
-                      where (zapisi.mentor == CurrentUser.prijavljeniKorisnik.id && zapisi.potpis_mentor == null) || (zapisi.Specijalizacija1.Korisnik1.id == CurrentUser.prijavljeniKorisnik.id && zapisi.potpis_gl_mentor == null)
-                      select new Mentor.KompPrikaz
-                      {
-                          Kompetencije = zapisi,
-                          Specijalizant = zapisi.Specijalizacija1.Korisnik.ime + " " + zapisi.Specijalizacija1.Korisnik.prezime,
-                          Kompetencija = zapisi.kompetencije1,
-                          Stupanj_napredovanja = zapisi.stupanj_napredovanja,
-                          Mentor = zapisi.Korisnik.ime + " " + zapisi.Korisnik.prezime,
-                          Datum_mentor = zapisi.datum_mentor,
-                          Potpis_mentor = zapisi.potpis_mentor,
-                          Datum_gl_mentor = zapisi.datum_gl_mentor,
-                          Potpis_gl_mentor = zapisi.potpis_gl_mentor,
-                          Specijalizacija = zapisi.Specijalizacija1.specijalizacija1
-                      };
-
-            BindingSource bindingSource = new BindingSource(sql.ToList(), "");
+            BindingSource bindingSource = new BindingSource(mentorLogika.PracNapZapisi(false, 0), "");
             dgvKompetencije.DataSource = bindingSource;
             dgvKompetencije.Columns[0].Visible = false;
 

@@ -7,20 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
     public partial class PracenjeNapredovanja : UserControl
     {
-        private KnjizicaModel model;
+        private SpecijalizantLogika specijalizantLogika;
         private PracenjeNapredovanjaAdd napredAdd;
         private Specijalizant.PracNapDet napredovanjaDetalji;
         public PracenjeNapredovanja()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
-            if (CurrentUser.odabranaSpecijalizacija != null)
+            specijalizantLogika = new SpecijalizantLogika();
+            if (Sloj_obrade.CurrentUser.odabranaSpecijalizacija != null)
             {
                 UcitajKompetencije();
             }
@@ -28,12 +29,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
 
         public void UcitajKompetencije()
         {
-            var sql = from komp in model.Kompetencije.Include("Korisnik")
-                      where komp.specijalizacija == CurrentUser.odabranaSpecijalizacija.id
-                      orderby komp.id descending
-                      select komp;
-
-            BindingSource bindingSource = new BindingSource(sql.ToList(), "");
+            BindingSource bindingSource = new BindingSource(specijalizantLogika.PracNapZapisi(), "");
             dgvKompetencije.DataSource = bindingSource;
             dgvKompetencije.Columns[0].Visible = false;
             dgvKompetencije.Columns[2].Visible = false;

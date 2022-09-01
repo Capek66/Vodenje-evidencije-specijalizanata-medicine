@@ -7,39 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Specijalizant
 {
     public partial class PracNapDet : Form
     {
-        private KnjizicaModel model;
         private Kompetencije kompetencija;
         public PracNapDet(Kompetencije odabranaKomp)
         {
             InitializeComponent();
-            model = new KnjizicaModel();
             kompetencija = odabranaKomp;
             PopuniDetalje();
         }
         private void PopuniDetalje()
         {
             lblKomp.Text = kompetencija.kompetencije1;
-            lblStupanj.Text = ProvijeriText(kompetencija.stupanj_napredovanja.ToString());
+            lblStupanj.Text = ProvjeriText(kompetencija.stupanj_napredovanja.ToString());
             lblPrezImeMentor.Text = kompetencija.Korisnik.ime + " " + kompetencija.Korisnik.prezime;
-            lblDatumMntr.Text = ProvijeriText(kompetencija.datum_mentor.ToString());
-            lblMentPotp.Text = ProvijeriText(kompetencija.potpis_mentor);
-            lblGlMntr.Text = CurrentUser.odabranaSpecijalizacija.Korisnik1.ime + " " + CurrentUser.odabranaSpecijalizacija.Korisnik1.prezime;
-            lblDatumGlMntr.Text = ProvijeriText(kompetencija.datum_gl_mentor.ToString());
-            lblPotpisGlMntr.Text = ProvijeriText(kompetencija.potpis_gl_mentor);
+            lblDatumMntr.Text = ProvjeriText(kompetencija.datum_mentor.ToString());
+            lblMentPotp.Text = ProvjeriText(kompetencija.potpis_mentor);
+            lblGlMntr.Text = Sloj_obrade.CurrentUser.odabranaSpecijalizacija.Korisnik1.ime + " " + Sloj_obrade.CurrentUser.odabranaSpecijalizacija.Korisnik1.prezime;
+            lblDatumGlMntr.Text = ProvjeriText(kompetencija.datum_gl_mentor.ToString());
+            lblPotpisGlMntr.Text = ProvjeriText(kompetencija.potpis_gl_mentor);
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private string ProvijeriText(string text)
+        private string ProvjeriText(string text)
         {
             if(text == "" || text == null)
             {

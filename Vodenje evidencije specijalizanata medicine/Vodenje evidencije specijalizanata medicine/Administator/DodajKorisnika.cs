@@ -7,22 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_podataka;
+using Sloj_obrade;
 using System.Security.Cryptography;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Administator
 {
     public partial class DodajKorisnika : UserControl
     {
-        private KnjizicaModel model;
+        private AdministratorLogika administratorLogika;
         public DodajKorisnika()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
+            administratorLogika = new AdministratorLogika();
             rbSpecijalizant.Checked = true;
             lblError.Visible = false;
         }
-
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             if (rbSpecijalizant.Checked)
@@ -51,82 +51,14 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
             }
             OsvjeziFormu();
         }
-
         private void DodajSpecijalizanta()
         {
-            model.Korisnik.Add(new Korisnik()
-            {
-                id = DohvatiID(),
-                ime = tbIme.Text,
-                prezime = tbPrezime.Text,
-                godina_rodenja = dtpGodRod.Value,
-                email = tbEmail.Text,
-                lozinka = GetHash(tbPrezime.Text + tbIme.Text + ":" + tbPrezime.Text.ToLower()),
-                uloga = 3
-            });
-            model.SaveChanges();
-
-            var sql = from korisnik in model.Korisnik
-                      where korisnik.email == tbEmail.Text
-                      select korisnik.id;
-
-            int noviSpec_id = sql.Single();
-
-            model.Specijalizant.Add(new Vodenje_evidencije_specijalizanata_medicine.Data.Specijalizant()
-            {
-                korisnik = noviSpec_id,
-                godina_specijalizacije = 1
-            });
-            model.SaveChanges();
+            administratorLogika.DodajKorisnika(3, tbIme.Text, tbPrezime.Text, tbEmail.Text, dtpGodRod.Value, null);
         }
-
         private void DodajMentora()
         {
-            model.Korisnik.Add(new Korisnik()
-            {
-                id = DohvatiID(),
-                ime = tbIme.Text,
-                prezime = tbPrezime.Text,
-                godina_rodenja = dtpGodRod.Value,
-                email = tbEmail.Text,
-                lozinka = GetHash(tbPrezime.Text + tbIme.Text + ":" + tbPrezime.Text.ToLower()),
-                uloga = 2
-            });
-            model.SaveChanges();
-
-            var sql = from korisnik in model.Korisnik
-                      where korisnik.email == tbEmail.Text
-                      select korisnik.id;
-
-            int noviMentor_id = sql.Single();
-
-            model.Mentor.Add(new Data.Mentor
-            {
-                korisnik = noviMentor_id,
-                ustanova = tbUstanova.Text
-            });
-            model.SaveChanges();
+            administratorLogika.DodajKorisnika(2, tbIme.Text, tbPrezime.Text, tbEmail.Text, dtpGodRod.Value, tbUstanova.Text);
         }
-
-        private string GetHash(string salt)
-        {
-            using (var sha256 = new SHA256Managed())
-            {
-                return BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(salt))).Replace("-", "").ToLower();
-            }
-        }
-
-        private int DohvatiID()
-        {
-            var sql = from korisnik in model.Korisnik
-                      orderby korisnik.id descending
-                      select korisnik.id;
-
-            List<int> id = sql.ToList();
-
-            return id[0] + 1;
-        }
-
         private void OsvjeziFormu()
         {
             tbIme.Text = "";
@@ -136,7 +68,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
             rbSpecijalizant.Checked = true;
             rbMentor.Checked = false;
         }
-
         private bool ProvijeriFormu(string uloga)
         {
             if(tbIme.Text == "" || tbPrezime.Text == "" || tbEmail.Text == "")

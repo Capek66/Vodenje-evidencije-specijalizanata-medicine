@@ -7,28 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
     public partial class PracenjeNapMntrDetalji : Form
     {
-        private KnjizicaModel model;
+        private MentorLogika mentorLogika;
         private Kompetencije kompetencija;
         public PracenjeNapMntrDetalji(Kompetencije odabranaKompetencija)
         {
             InitializeComponent();
-            model = new KnjizicaModel();
-            DohvatiKompetenciju(odabranaKompetencija);
+            mentorLogika = new MentorLogika();
+            kompetencija = odabranaKompetencija;
             PostaviStupnjeve();
             UcitajDetalje();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void PostaviStupnjeve()
         {
             cbStupanj.Items.Add("1");
@@ -36,26 +35,20 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             cbStupanj.Items.Add("3");
             cbStupanj.SelectedIndex = 0;
         }
-
         private void btnPotpisi_Click(object sender, EventArgs e)
         {
             int odabraniStupanjNap = int.Parse(cbStupanj.Text);
 
-            if (kompetencija.mentor == CurrentUser.prijavljeniKorisnik.id)
+            if (kompetencija.mentor == Sloj_obrade.CurrentUser.prijavljeniKorisnik.id)
             {
-                kompetencija.potpis_mentor = "Pregledano!";
-                kompetencija.datum_mentor = DateTime.Now;
-                kompetencija.stupanj_napredovanja = odabraniStupanjNap;
+                mentorLogika.Pregledaj(kompetencija.id, 2, 1, odabraniStupanjNap);
             }
-            if (kompetencija.Specijalizacija1.Korisnik1.id == CurrentUser.prijavljeniKorisnik.id)
+            if (kompetencija.Specijalizacija1.Korisnik1.id == Sloj_obrade.CurrentUser.prijavljeniKorisnik.id)
             {
-                kompetencija.potpis_gl_mentor = "Pregledano!";
-                kompetencija.datum_gl_mentor = DateTime.Now;
+                mentorLogika.Pregledaj(kompetencija.id, 2, 2, odabraniStupanjNap);
             }
-            model.SaveChanges();
             UcitajDetalje();
         }
-
         private void UcitajDetalje()
         {
             lblPrezIme.Text = kompetencija.Specijalizacija1.Korisnik.ime + " " + kompetencija.Specijalizacija1.Korisnik.prezime;
@@ -67,7 +60,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             lblDatumGlMntr.Text = ProvijeriText(kompetencija.datum_gl_mentor.ToString());
             lblPotpisGlMntr.Text = ProvijeriText(kompetencija.potpis_gl_mentor);
         }
-
         private string ProvijeriText(string text)
         {
             if (text == "" || text == null)
@@ -78,15 +70,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             {
                 return text;
             }
-        }
-
-        private void DohvatiKompetenciju(Kompetencije odabranaKomp)
-        {
-            var sql = from k in model.Kompetencije
-                      where k.id == odabranaKomp.id
-                      select k;
-
-            kompetencija = sql.Single();
         }
     }
 }

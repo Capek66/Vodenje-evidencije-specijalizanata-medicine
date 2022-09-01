@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Specijalizant
 {
     public partial class RaspObjDet : Form
     {
         private RasporedPrograma odbRas;
+        private SpecijalizantLogika specijalizantLogika;
         public RaspObjDet(RasporedPrograma odabraniRaspored)
         {
             InitializeComponent();
+            specijalizantLogika = new SpecijalizantLogika();
             odbRas = odabraniRaspored;
             PostaviDetalje();
         }
@@ -31,7 +34,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Specijalizant
             lblJedinica.Text = odbRas.ustrojstvena_jedinica;
             lblPrezImeMentor.Text = odbRas.Korisnik.ime + " " + odbRas.Korisnik.prezime;
             lblMentPotp.Text = ProvjeriText(odbRas.potpis_mentor);
-            lblGlMntr.Text = CurrentUser.odabranaSpecijalizacija.Korisnik1.ime + " " + CurrentUser.odabranaSpecijalizacija.Korisnik1.prezime;
+            lblGlMntr.Text = Sloj_obrade.CurrentUser.odabranaSpecijalizacija.Korisnik1.ime + " " + Sloj_obrade.CurrentUser.odabranaSpecijalizacija.Korisnik1.prezime;
             lblPotpisGlMntr.Text = ProvjeriText(odbRas.potpis_gl_mentor);
         }
 

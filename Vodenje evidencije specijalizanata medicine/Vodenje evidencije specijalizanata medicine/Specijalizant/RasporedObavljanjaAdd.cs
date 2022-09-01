@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
     public partial class RasporedObavljanjaAdd : Form
     {
-        private KnjizicaModel model;
+        SpecijalizantLogika specijalizantLogika;
         public RasporedObavljanjaAdd()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
+            specijalizantLogika = new SpecijalizantLogika();
             DohvatiMentore();
         }
 
@@ -32,7 +33,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             {
                 RasporedPrograma noviRO = new RasporedPrograma()
                 {
-                    id = DohvatiID(),
+                    id = 0,
                     naziv_ustanove = tbUstanova.Text,
                     naziv_odjela = tbOdjel.Text,
                     godisnji_odmor = int.Parse(tbGodOdm.Text),
@@ -43,39 +44,16 @@ namespace Vodenje_evidencije_specijalizanata_medicine
                     mentor = (cbMentor.SelectedItem as Korisnik).id,
                     potpis_mentor = null,
                     potpis_gl_mentor = null,
-                    specijalizacija = CurrentUser.odabranaSpecijalizacija.id
+                    specijalizacija = Sloj_obrade.CurrentUser.odabranaSpecijalizacija.id
                 };
-                model.RasporedPrograma.Add(noviRO);
-                model.SaveChanges();
+                specijalizantLogika.RaspObNovi(noviRO);
                 this.Close();
             }
         }
 
         private void DohvatiMentore()
         {
-            var sql = from mentori in model.Korisnik
-                      where mentori.uloga == 2
-                      select mentori;
-
-            cbMentor.DataSource = sql.ToList();
-        }
-
-        private int DohvatiID()
-        {
-            var sql = from raspored in model.RasporedPrograma
-                      orderby raspored.id descending
-                      select raspored.id;
-
-            if(sql.ToList().Count != 0)
-            {
-                List<int> id = sql.ToList();
-
-                return id[0] + 1;
-            }
-            else
-            {
-                return 1;
-            }
+            cbMentor.DataSource = specijalizantLogika.DohvatiMentore();
         }
     }
 }

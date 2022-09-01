@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
     public partial class RasporedObMntDetails : Form
     {
+        MentorLogika mentorLogika;
         private RasporedPrograma program;
-        private KnjizicaModel model;
         public RasporedObMntDetails(RasporedPrograma odabraniRaspored)
         {
             InitializeComponent();
-            model = new KnjizicaModel();
-            DohvatiRaspored(odabraniRaspored);
+            mentorLogika = new MentorLogika();
+            program = odabraniRaspored;
             PopuniDetalje();
         }
 
@@ -43,7 +44,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             lblGlMntr.Text = program.Specijalizacija1.Korisnik1.ime + " " + program.Specijalizacija1.Korisnik1.prezime;
             lblPotpisGlMntr.Text = ProvjeriText(program.potpis_gl_mentor);
         }
-
         private string ProvjeriText(string zapis)
         {
             if (zapis == null || zapis == "")
@@ -55,28 +55,17 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
                 return zapis;
             }
         }
-
         private void btnPotpisi_Click(object sender, EventArgs e)
         {
-            if (program.mentor == CurrentUser.prijavljeniKorisnik.id)
+            if (program.mentor == Sloj_obrade.CurrentUser.prijavljeniKorisnik.id)
             {
-                program.potpis_mentor = "Pregledano!";
+                mentorLogika.Pregledaj(program.id, 1, 1, 0);
             }
-            if (program.Specijalizacija1.Korisnik1.id == CurrentUser.prijavljeniKorisnik.id)
+            if (program.Specijalizacija1.Korisnik1.id == Sloj_obrade.CurrentUser.prijavljeniKorisnik.id)
             {
-                program.potpis_gl_mentor = "Pregledano!";
+                mentorLogika.Pregledaj(program.id, 1, 2, 0);
             }
-            model.SaveChanges();
             PopuniDetalje();
-        }
-
-        private void DohvatiRaspored(RasporedPrograma odabraniRaspored)
-        {
-            var sql = from p in model.RasporedPrograma
-                      where p.id == odabraniRaspored.id
-                      select p;
-
-            program = sql.Single();
         }
     }
 }

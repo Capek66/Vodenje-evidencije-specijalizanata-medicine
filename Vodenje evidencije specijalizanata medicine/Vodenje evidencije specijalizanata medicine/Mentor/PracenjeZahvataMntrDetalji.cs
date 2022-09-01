@@ -7,44 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
     public partial class PracenjeZahvataMntrDetalji : Form
     {
-        private KnjizicaModel model;
+        private MentorLogika mentorLogika;
         private Zahvati zahvat;
         public PracenjeZahvataMntrDetalji(Zahvati odabranZahvat)
         {
             InitializeComponent();
-            model = new KnjizicaModel();
-            DohvatiZahvat(odabranZahvat);
+            mentorLogika = new MentorLogika();
+            zahvat = odabranZahvat;
             PostaviStupnjeve();
             UcitajDetalje();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void DohvatiZahvat(Zahvati odabranZahvat)
-        {
-            var sql = from z in model.Zahvati
-                      where z.id == odabranZahvat.id
-                      select z;
-
-            zahvat = sql.Single();
-        }
-
         private void PostaviStupnjeve()
         {
             cbStupanj.Items.Add("2");
             cbStupanj.Items.Add("3");
             cbStupanj.SelectedIndex = 0;
         }
-
         private void UcitajDetalje()
         {
             lblPrezIme.Text = zahvat.Specijalizacija1.Korisnik.ime + " " + zahvat.Specijalizacija1.Korisnik.prezime;
@@ -57,7 +46,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
             lblDatumGlMntr.Text = ProvjeriText(zahvat.datum_gl_mentor.ToString());
             lblPotpisGlMntr.Text = ProvjeriText(zahvat.potpis_gl_mentor);
         }
-
         private string ProvjeriText(string text)
         {
             if (text == "" || text == null)
@@ -73,18 +61,14 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
         {
             int odabraniStupanjNap = int.Parse(cbStupanj.Text);
 
-            if (zahvat.mentor == CurrentUser.prijavljeniKorisnik.id)
+            if (zahvat.mentor == Sloj_obrade.CurrentUser.prijavljeniKorisnik.id)
             {
-                zahvat.potpis_mentor = "Pregledano!";
-                zahvat.datum_mentor = DateTime.Now;
-                zahvat.stupanj_napredovanja = odabraniStupanjNap;
+                mentorLogika.Pregledaj(zahvat.id, 3, 1, odabraniStupanjNap);
             }
-            if (zahvat.Specijalizacija1.Korisnik1.id == CurrentUser.prijavljeniKorisnik.id)
+            if (zahvat.Specijalizacija1.Korisnik1.id == Sloj_obrade.CurrentUser.prijavljeniKorisnik.id)
             {
-                zahvat.potpis_gl_mentor = "Pregledano!";
-                zahvat.datum_gl_mentor = DateTime.Now;
+                mentorLogika.Pregledaj(zahvat.id, 3, 2, 0);
             }
-            model.SaveChanges();
             UcitajDetalje();
         }
     }

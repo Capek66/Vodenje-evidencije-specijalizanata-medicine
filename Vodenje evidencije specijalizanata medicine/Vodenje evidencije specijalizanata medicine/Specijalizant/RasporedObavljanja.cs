@@ -7,20 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_podataka;
+using Sloj_obrade;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
     public partial class RasporedObavljanja : UserControl
     {
-        private KnjizicaModel model;
+        private SpecijalizantLogika specijalizantLogika;
         private RasporedObavljanjaAdd noviRaspOb;
         private Specijalizant.RaspObjDet raspObj;
         public RasporedObavljanja()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
-            if(CurrentUser.odabranaSpecijalizacija != null)
+            specijalizantLogika = new SpecijalizantLogika();
+            if(Sloj_obrade.CurrentUser.ProvjeriSpecijalizaciju())
             {
                 UcitajZapise();
             }
@@ -28,12 +29,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
 
         public void UcitajZapise()
         {
-            var sql = from raspored in model.RasporedPrograma.Include("Korisnik")
-                      where raspored.specijalizacija == CurrentUser.odabranaSpecijalizacija.id
-                      orderby raspored.id descending
-                      select raspored;
-
-            BindingSource bindingSource = new BindingSource(sql.ToList(), "");
+            BindingSource bindingSource = new BindingSource(specijalizantLogika.RaspObZapisi(), "");
             dgvRaspored.DataSource = bindingSource;
             dgvRaspored.Columns[0].Visible = false;
             dgvRaspored.Columns[8].Visible = false;

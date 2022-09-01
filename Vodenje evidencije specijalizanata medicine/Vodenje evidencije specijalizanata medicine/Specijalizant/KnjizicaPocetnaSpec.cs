@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sloj_obrade;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
     public partial class KnjizicaPocetnaSpec : Form
     {
+        private ZajednicaLogika zajednicaLogika;
         private RasporedObavljanja rasporedObavljanja;
         private PracenjeNapredovanja pracenjeNapredovanja;
         private PracenjeZahvata pracenjeZahvata;
@@ -20,6 +22,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         public KnjizicaPocetnaSpec()
         {
             InitializeComponent();
+            zajednicaLogika = new ZajednicaLogika();
             rasporedObavljanja = new RasporedObavljanja();
             pracenjeNapredovanja = new PracenjeNapredovanja();
             pracenjeZahvata = new PracenjeZahvata();
@@ -46,7 +49,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(profil);
-            profil.UcitajPodatke();
+            profil.UcitajPodatke(zajednicaLogika.DohvatiPodatkeProfil());
         }
 
         private void Pocetna_Click(object sender, EventArgs e)
@@ -71,7 +74,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
 
         private void ProvjeriSpecijalizaciju()
         {
-            if(CurrentUser.odabranaSpecijalizacija == null)
+            if(!Sloj_obrade.CurrentUser.ProvjeriSpecijalizaciju())
             {
                 RasporedObavljanjaLbl.Enabled = false;
                 PracenjeNapredovanjaLbl.Enabled = false;

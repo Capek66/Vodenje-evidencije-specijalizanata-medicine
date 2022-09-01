@@ -1,0 +1,166 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\Prezentacijski_sloj.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_obrade\\Sloj_obrade.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_obrade\\Sloj_obrade.csproj",
+        "projectName": "Sloj_obrade",
+        "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_obrade\\Sloj_obrade.csproj",
+        "packagesPath": "C:\\Users\\CpK\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_obrade\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\CpK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj": {
+                "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj",
+        "projectName": "Sloj_podataka",
+        "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj",
+        "packagesPath": "C:\\Users\\CpK\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\CpK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\Prezentacijski_sloj.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\Prezentacijski_sloj.csproj",
+        "projectName": "Vodenje evidencije specijalizanata medicine",
+        "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\Prezentacijski_sloj.csproj",
+        "packagesPath": "C:\\Users\\CpK\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\CpK\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_obrade\\Sloj_obrade.csproj": {
+                "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_obrade\\Sloj_obrade.csproj"
+              },
+              "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj": {
+                "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

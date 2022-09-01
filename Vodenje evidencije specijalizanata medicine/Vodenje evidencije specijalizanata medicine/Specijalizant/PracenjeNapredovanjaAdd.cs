@@ -7,17 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
     public partial class PracenjeNapredovanjaAdd : Form
     {
-        private KnjizicaModel model;
+        private SpecijalizantLogika specijalizantLogika;
         public PracenjeNapredovanjaAdd()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
+            specijalizantLogika = new SpecijalizantLogika();
             DohvatiMentore();
         }
 
@@ -32,7 +33,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             {
                 Kompetencije novaKomp = new Kompetencije()
                 {
-                    id = DohvatiID(),
+                    id = 0,
                     kompetencije1 = tbKompetencije.Text,
                     mentor = (cbMentor.SelectedItem as Korisnik).id,
                     datum_mentor = null,
@@ -40,40 +41,15 @@ namespace Vodenje_evidencije_specijalizanata_medicine
                     stupanj_napredovanja = null,
                     datum_gl_mentor = null,
                     potpis_gl_mentor = null,
-                    specijalizacija = CurrentUser.odabranaSpecijalizacija.id
+                    specijalizacija = Sloj_obrade.CurrentUser.odabranaSpecijalizacija.id
                 };
-
-                model.Kompetencije.Add(novaKomp);
-                model.SaveChanges();
+                specijalizantLogika.PracZapNovi(novaKomp);
                 this.Close();
             }
         }
-
-        private int DohvatiID()
-        {
-            var sql = from komp in model.Kompetencije
-                      orderby komp.id descending
-                      select komp.id;
-
-            if (sql.ToList().Count != 0)
-            {
-                List<int> id = sql.ToList();
-
-                return id[0] + 1;
-            }
-            else
-            {
-                return 1;
-            }
-        }
-
         private void DohvatiMentore()
         {
-            var sql = from mentori in model.Korisnik
-                      where mentori.uloga == 2
-                      select mentori;
-
-            cbMentor.DataSource = sql.ToList();
+            cbMentor.DataSource = specijalizantLogika.DohvatiMentore();
         }
     }
 }

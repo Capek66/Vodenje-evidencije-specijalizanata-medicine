@@ -15,6 +15,33 @@
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
         }
+      },
+      "Sloj_obrade/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Sloj_podataka": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Sloj_obrade.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sloj_obrade.dll": {}
+        }
+      },
+      "Sloj_podataka/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/Sloj_podataka.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sloj_podataka.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.8/win": {
@@ -30,6 +57,33 @@
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "Sloj_obrade/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Sloj_podataka": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Sloj_obrade.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sloj_obrade.dll": {}
+        }
+      },
+      "Sloj_podataka/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/Sloj_podataka.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sloj_podataka.dll": {}
         }
       }
     },
@@ -47,6 +101,33 @@
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
         }
+      },
+      "Sloj_obrade/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Sloj_podataka": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Sloj_obrade.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sloj_obrade.dll": {}
+        }
+      },
+      "Sloj_podataka/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/Sloj_podataka.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sloj_podataka.dll": {}
+        }
       }
     },
     ".NETFramework,Version=v4.8/win-x86": {
@@ -62,6 +143,33 @@
         "runtime": {
           "lib/net45/EntityFramework.SqlServer.dll": {},
           "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "Sloj_obrade/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Sloj_podataka": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Sloj_obrade.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sloj_obrade.dll": {}
+        }
+      },
+      "Sloj_podataka/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "EntityFramework": "6.2.0"
+        },
+        "compile": {
+          "bin/placeholder/Sloj_podataka.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Sloj_podataka.dll": {}
         }
       }
     }
@@ -96,11 +204,23 @@
         "tools/install.ps1",
         "tools/migrate.exe"
       ]
+    },
+    "Sloj_obrade/1.0.0": {
+      "type": "project",
+      "path": "../Sloj_obrade/Sloj_obrade.csproj",
+      "msbuildProject": "../Sloj_obrade/Sloj_obrade.csproj"
+    },
+    "Sloj_podataka/1.0.0": {
+      "type": "project",
+      "path": "../Sloj_podataka/Sloj_podataka.csproj",
+      "msbuildProject": "../Sloj_podataka/Sloj_podataka.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
-      "EntityFramework >= 6.2.0"
+      "EntityFramework >= 6.2.0",
+      "Sloj_obrade >= 1.0.0",
+      "Sloj_podataka >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -109,9 +229,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine.csproj",
+      "projectUniqueName": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\Prezentacijski_sloj.csproj",
       "projectName": "Vodenje evidencije specijalizanata medicine",
-      "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine.csproj",
+      "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\Prezentacijski_sloj.csproj",
       "packagesPath": "C:\\Users\\CpK\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Vodenje evidencije specijalizanata medicine\\obj\\",
       "projectStyle": "PackageReference",
@@ -129,7 +249,14 @@
       },
       "frameworks": {
         "net48": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_obrade\\Sloj_obrade.csproj": {
+              "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_obrade\\Sloj_obrade.csproj"
+            },
+            "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj": {
+              "projectPath": "C:\\Users\\CpK\\Documents\\GitHub\\Vodenje-evidencije-specijalizanata-medicine\\Vodenje evidencije specijalizanata medicine\\Sloj_podataka\\Sloj_podataka.csproj"
+            }
+          }
         }
       }
     },

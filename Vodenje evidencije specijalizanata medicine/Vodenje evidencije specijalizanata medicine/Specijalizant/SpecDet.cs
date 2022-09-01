@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Specijalizant
 {
     public partial class SpecDet : Form
     {
-        private SpecijalizacijePrikaz specijalizacija;
-        private KnjizicaModel model;
-        public SpecDet(SpecijalizacijePrikaz odabranaSpec)
+        private SpecijalizantLogika specijalizantLogika;
+        private Sloj_obrade.SpecijalizacijePrikaz specijalizacija;
+        public SpecDet(Sloj_obrade.SpecijalizacijePrikaz odabranaSpec)
         {
             InitializeComponent();
+            specijalizantLogika = new SpecijalizantLogika();
             specijalizacija = odabranaSpec;
-            model = new KnjizicaModel();
             PostaviDetalje();
         }
 
@@ -39,12 +40,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Specijalizant
             lblDatumPoc.Text = specijalizacija.datum_pocetka.ToString();
             lblPotpisPoc.Text = Provjeri(specijalizacija.potpis_gl_mentora);
 
-            var sql = from zavrsetak in model.ZavrsetakSpecijalizacije
-                      where zavrsetak.specijalizacija == specijalizacija.specijalizacija.id
-                      select zavrsetak;
-
-            ZavrsetakSpecijalizacije zavrsetakSpecijalizacije = sql.Single();
-
+            ZavrsetakSpecijalizacije zavrsetakSpecijalizacije = specijalizantLogika.DohvatiZavrsetakSpec(specijalizacija.specijalizacija.id);
             rctbMisljenje.Text = Provjeri(zavrsetakSpecijalizacije.misljenje_gl_mentora);
             lblZavrsetak.Text = Provjeri(zavrsetakSpecijalizacije.datum_zavrsetka.ToString());
             lblPotpisKraj.Text = Provjeri(zavrsetakSpecijalizacije.potpis_gl_mentor);

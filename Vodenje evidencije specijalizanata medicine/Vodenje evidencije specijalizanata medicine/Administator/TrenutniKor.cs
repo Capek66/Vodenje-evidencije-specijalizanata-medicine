@@ -7,28 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_podataka;
+using Sloj_obrade;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Administator
 {
     public partial class TrenutniKor : UserControl
     {
-        private KnjizicaModel model;
+        private AdministratorLogika administratorLogika;
         public TrenutniKor()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
+            administratorLogika = new AdministratorLogika();
             UcitajSpecijalizante();
             UcitajMentore();
         }
-
         public void UcitajSpecijalizante()
         {
-            var sql = from specijalizanti in model.Korisnik
-                      where specijalizanti.uloga == 3
-                      select specijalizanti;
-
-            BindingSource bindingSource = new BindingSource(sql.ToList(), "");
+            BindingSource bindingSource = new BindingSource(administratorLogika.DohvatiSpecijalizante(), "");
             dgvSpecijalizanti.DataSource = bindingSource;
             dgvSpecijalizanti.Columns[0].Visible = false;
             dgvSpecijalizanti.Columns[5].Visible = false;
@@ -42,14 +38,9 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
             dgvSpecijalizanti.Columns[13].Visible = false;
             dgvSpecijalizanti.Columns[14].Visible = false;
         }
-
         public void UcitajMentore()
         {
-            var sql = from mentori in model.Korisnik
-                      where mentori.uloga == 2
-                      select mentori;
-
-            BindingSource bindingSource = new BindingSource(sql.ToList(), "");
+            BindingSource bindingSource = new BindingSource(administratorLogika.DohvatiMentore(), "");
             dgvMentori.DataSource = bindingSource;
             dgvMentori.Columns[0].Visible = false;
             dgvMentori.Columns[5].Visible = false;

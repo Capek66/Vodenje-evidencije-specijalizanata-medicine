@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sloj_obrade;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Administator
 {
     public partial class IzbornikAdm : Form
     {
+        private ZajednicaLogika zajednicaLogika;
         private DodajKorisnika dodajKorisnika;
         private TrenutniKor trenutniKor;
         private Profil profil;
         public IzbornikAdm()
         {
             InitializeComponent();
+            zajednicaLogika = new ZajednicaLogika();
             dodajKorisnika = new DodajKorisnika();
             trenutniKor = new TrenutniKor();
             profil = new Profil();
@@ -47,7 +50,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Administator
         {
             panel.Controls.Clear();
             panel.Controls.Add(profil);
-            profil.UcitajPodatke();
+            profil.UcitajPodatke(zajednicaLogika.DohvatiPodatkeProfil());
         }
     }
 }

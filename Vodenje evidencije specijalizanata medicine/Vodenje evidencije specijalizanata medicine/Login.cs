@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vodenje_evidencije_specijalizanata_medicine.Mentor;
 using Vodenje_evidencije_specijalizanata_medicine.Administator;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
-using System.Security.Cryptography;
+using Sloj_obrade;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
@@ -27,17 +26,18 @@ namespace Vodenje_evidencije_specijalizanata_medicine
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            bool ispravno = ProvijeriPodatke();
+            ZajednicaLogika zajednicaLogika = new ZajednicaLogika();
+            bool ispravno = zajednicaLogika.ProvjeriPodatke(tbEmail.Text, tbPass.Text);
             if (ispravno)
             {
                 lblPogresnaLoz.Visible = false;
-                if (CurrentUser.prijavljeniKorisnik.Uloga1.uloga1 == "Administrator")
+                if (Sloj_obrade.CurrentUser.DohvatiUlogu() == "Administrator")
                 {
                     izbornikAdm = new IzbornikAdm();
                     this.Hide();
                     izbornikAdm.ShowDialog();
                     this.Show();
-                }else if(CurrentUser.prijavljeniKorisnik.Uloga1.uloga1 == "Mentor")
+                }else if(Sloj_obrade.CurrentUser.DohvatiUlogu() == "Mentor")
                 {
                     pocetnaMentori = new PocetnaMentori();
                     this.Hide();
@@ -57,48 +57,6 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             else
             {
                 lblPogresnaLoz.Visible = true;
-            }
-        }
-
-        private bool ProvijeriPodatke()
-        {
-            string email = tbEmail.Text;
-            string lozinka = tbPass.Text;
-            KnjizicaModel model = new KnjizicaModel();
-
-            var sql = from korisnik in model.Korisnik
-                      where korisnik.email == email
-                      select korisnik;
-
-            Korisnik pronadeniKorisnik;
-            try
-            {
-                pronadeniKorisnik = sql.Single();
-            }
-            catch(Exception e)
-            {
-                return false;
-            }
-
-            string salt = pronadeniKorisnik.prezime + pronadeniKorisnik.ime + ":" + lozinka;
-            string hash = GetHash(salt);
-            
-            if (hash.Equals(pronadeniKorisnik.lozinka))
-            {
-                CurrentUser.PrijaviKorisnika(pronadeniKorisnik);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private string GetHash(string salt)
-        {
-            using (var sha256 = new SHA256Managed())
-            {
-                return BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(salt))).Replace("-", "").ToLower();
             }
         }
     }

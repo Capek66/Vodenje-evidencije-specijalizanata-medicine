@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
+using Sloj_podataka;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
     public partial class SpecijalizantiMntr : UserControl
     {
+        private MentorLogika mentorLogika;
         private PregledSpec pregledSpec;
-        private KnjizicaModel model;
         public SpecijalizantiMntr()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
+            mentorLogika = new MentorLogika();
             UcitajSpecijalizante();
         } 
 
@@ -37,46 +38,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 
         private void UcitajMentor()
         {
-            List<Korisnik> mentor = new List<Korisnik>();
-
-            var sql1 = from r in model.RasporedPrograma.Include("Specijalizacija1")
-                       where r.mentor == CurrentUser.prijavljeniKorisnik.id
-                       select r.Specijalizacija1.Korisnik;
-            List<Korisnik> rMntr = sql1.ToList();
-
-            var sql2 = from k in model.Kompetencije.Include("Specijalizacija1")
-                       where k.mentor == CurrentUser.prijavljeniKorisnik.id
-                       select k.Specijalizacija1.Korisnik;
-            List<Korisnik> kMntr = sql2.ToList();
-
-            var sql3 = from z in model.RasporedPrograma.Include("Specijalizacija1")
-                       where z.mentor == CurrentUser.prijavljeniKorisnik.id
-                       select z.Specijalizacija1.Korisnik;
-            List<Korisnik> zMntr = sql3.ToList();
-
-            foreach (Korisnik k in rMntr)
-            {
-                if (!mentor.Contains(k))
-                {
-                    mentor.Add(k);
-                }
-            }
-            foreach (Korisnik k in kMntr)
-            {
-                if (!mentor.Contains(k))
-                {
-                    mentor.Add(k);
-                }
-            }
-            foreach (Korisnik k in zMntr)
-            {
-                if (!mentor.Contains(k))
-                {
-                    mentor.Add(k);
-                }
-            }
-
-            BindingSource bsMntr = new BindingSource(mentor, "");
+            BindingSource bsMntr = new BindingSource(mentorLogika.SpecijalizantiMntr(), "");
             dgvMentor.DataSource = bsMntr;
 
             if(bsMntr.Count == 0)
@@ -91,15 +53,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 
         private void UcitajGlMentor()
         {
-            List<Korisnik> glMentor = new List<Korisnik>(); 
-            foreach (Specijalizacija spec in CurrentUser.prijavljeniKorisnik.Specijalizacija1)
-            {
-                if (!glMentor.Contains(spec.Korisnik))
-                {
-                    glMentor.Add(spec.Korisnik);
-                }
-            }
-            BindingSource bsGlMntr = new BindingSource(glMentor, "");
+            BindingSource bsGlMntr = new BindingSource(mentorLogika.SpecijalizantiGlMntr(), "");
             dgvGlMentor.DataSource = bsGlMntr;
 
             if (bsGlMntr.Count == 0)

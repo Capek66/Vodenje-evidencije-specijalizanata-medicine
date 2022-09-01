@@ -7,23 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_obrade;
 
 namespace Vodenje_evidencije_specijalizanata_medicine
 {
     public partial class Profil : UserControl
     {
         private PasswordUpdate passwordUpdate;
-        private KnjizicaModel model;
+        private ZajednicaLogika zajednicaLogika;
         private bool stanje;
-        private Korisnik korisnik;
         public Profil()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
+            zajednicaLogika = new ZajednicaLogika();
             PocetnoStanje();
-            PronadiKorisnika();
-            UcitajPodatke();
+            UcitajPodatke(zajednicaLogika.DohvatiPodatkeProfil());
         }
 
         private void btnPass_Click(object sender, EventArgs e)
@@ -46,21 +44,9 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             }
             else
             {
-                korisnik.ime = tbIme.Text;
-                korisnik.prezime = tbPrezime.Text;
-                korisnik.email = tbEmail.Text;
-                korisnik.godina_rodenja = dtpDatRod.Value;
-                if(korisnik.uloga == 2)
-                {
-                    korisnik.Mentor.ustanova = tbVar.Text;
-                }
-                else if(korisnik.uloga == 3)
-                {
-                    korisnik.Specijalizant.godina_specijalizacije = int.Parse(tbVar.Text);
-                }
-                model.SaveChanges();
+                zajednicaLogika.AzurirajPodatkeProfil(tbIme.Text, tbPrezime.Text, tbEmail.Text, dtpDatRod.Value, tbVar.Text);
                 PocetnoStanje();
-                UcitajPodatke();
+                UcitajPodatke(zajednicaLogika.DohvatiPodatkeProfil());
             }
         }
 
@@ -73,11 +59,11 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             tbEmail.Enabled = false;
             dtpDatRod.Enabled = false;
             tbVar.Enabled = false;
-            if (CurrentUser.prijavljeniKorisnik.uloga == 2)
+            if (Sloj_obrade.CurrentUser.DohvatiUlogu() == "Mentor")
             {
                 lblVar.Text = "Ustanova:";
             }
-            else if(CurrentUser.prijavljeniKorisnik.uloga == 3)
+            else if(Sloj_obrade.CurrentUser.DohvatiUlogu() == "Specijalizant")
             {
                 lblVar.Text = "Godina specijalizacije:";
             }
@@ -87,34 +73,25 @@ namespace Vodenje_evidencije_specijalizanata_medicine
             }
         }
 
-        public void UcitajPodatke()
+        public void UcitajPodatke(IDictionary<string, string> podaci)
         {
-            tbIme.Text = korisnik.ime;
-            tbPrezime.Text = korisnik.prezime;
-            tbEmail.Text = korisnik.email;
-            dtpDatRod.Value = korisnik.godina_rodenja;
-            if (korisnik.uloga == 2)
+            tbIme.Text = podaci["ime"];
+            tbPrezime.Text = podaci["prezime"];
+            tbEmail.Text = podaci["email"];
+            dtpDatRod.Value = DateTime.Parse(podaci["god_rod"]);
+            if (Sloj_obrade.CurrentUser.DohvatiUlogu()== "Mentor")
             {
-                tbVar.Text = korisnik.Mentor.ustanova;
+                tbVar.Text = podaci["var"];
             }
-            else if (korisnik.uloga == 3)
+            else if (Sloj_obrade.CurrentUser.DohvatiUlogu() == "Specijalizant")
             {
-                tbVar.Text = korisnik.Specijalizant.godina_specijalizacije.ToString();
+                tbVar.Text = podaci["var"];
             }
             else
             {
                 tbVar.Text = "Nepostojeći zapis!";
                 tbVar.Enabled = false;
             }
-        }
-
-        private void PronadiKorisnika()
-        {
-            var sql = from k in model.Korisnik.Include("Mentor").Include("Specijalizant")
-                      where k.id == CurrentUser.prijavljeniKorisnik.id
-                      select k;
-
-            korisnik = sql.Single();
         }
     }
 }

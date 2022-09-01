@@ -7,22 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Vodenje_evidencije_specijalizanata_medicine.Data;
+using Sloj_podataka;
+using Sloj_obrade;
 
 namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
 {
     public partial class IzbornikMentor : Form
     {
+        private ZajednicaLogika zajednicaLogika;
         private RasporedObavljanjaMentor rasporedObavljanja;
         private PracenjeNapMntr pracenjeNap;
         private PracenjeZahvataMntr pracenjeZahvata;
         private SpecijalizantiMntr pregledSpec;
         private Profil profil;
-        private KnjizicaModel model;
         public IzbornikMentor()
         {
             InitializeComponent();
-            model = new KnjizicaModel();
+            zajednicaLogika = new ZajednicaLogika();
             rasporedObavljanja = new RasporedObavljanjaMentor();
             pracenjeNap = new PracenjeNapMntr();
             pracenjeZahvata = new PracenjeZahvataMntr();
@@ -67,7 +68,7 @@ namespace Vodenje_evidencije_specijalizanata_medicine.Mentor
         {
             knjizica.Controls.Clear();
             knjizica.Controls.Add(profil);
-            profil.UcitajPodatke();
+            profil.UcitajPodatke(zajednicaLogika.DohvatiPodatkeProfil());
         }
     }
 }
